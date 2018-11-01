@@ -28,7 +28,7 @@ public class FichajeController {
 		return MV;
 	}
 
-	@RequestMapping(value = "/abrirFichaje", method = RequestMethod.POST)
+	@RequestMapping(value = "/abrirFichaje", method = RequestMethod.GET)
 	public ModelAndView abrirFichaje(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String hora, mensaje;
 		String fecha;
