@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 
-import="com.uclm.equipo02.FichajeController"%>
+<!--import="com.uclm.equipo02.FichajeController"%>-->
 
 <!DOCTYPE html>
 
@@ -114,11 +114,11 @@ import="com.uclm.equipo02.FichajeController"%>
 					<div class="form-inline text-center" style="margin: auto;">
 
 
-						<form action="/abrirFichaje" method="POST">
+						<form action="abrirFichaje" method="post">
 							<input type="submit" class="btnfichaje input-lg" value="Abrir Fichaje" />
 						</form>
 
-						<form action="/cerrarFichaje" method="POST">
+						<form action="cerrarFichaje" method="post">
 							<input type="submit" class="btnfichaje input-lg" value="Cerrar Fichaje" />
 						</form>
 

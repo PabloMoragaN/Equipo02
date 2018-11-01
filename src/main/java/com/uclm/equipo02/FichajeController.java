@@ -1,4 +1,4 @@
-package com.uclm.equipo02;
+/*package com.uclm.equipo02;
 
 
 import javax.servlet.http.HttpServletRequest;
@@ -53,3 +53,4 @@ public class FichajeController {
 	} 
 
 }
+*/
