@@ -1,4 +1,4 @@
-/*package com.uclm.equipo02;
+package com.uclm.equipo02;
 
 
 import javax.servlet.http.HttpServletRequest;
@@ -21,16 +21,22 @@ public class FichajeController {
 	Fichaje fichaje;
 
 
+	@RequestMapping("fichajes")
+	public ModelAndView redir() {
+		ModelAndView MV= new ModelAndView();
+		MV.setViewName("fichajes");
+		return MV;
+	}
 
 	@RequestMapping(value = "/abrirFichaje", method = RequestMethod.POST)
 	public ModelAndView abrirFichaje(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String hora, mensaje;
 		String fecha;
-		
-		
+
+
 		hora=(java.time.LocalTime.now()).toString();
 		fecha=(java.time.LocalDate.now()).toString();
-		
+
 		mensaje = "Has abierto to fichaje";
 		//nombre,fecha,hora,estado
 		fichaje = new Fichaje(empleado.getNombre(), fecha, hora,true);
@@ -46,6 +52,4 @@ public class FichajeController {
 		return new ModelAndView("home", "mensaje", mensaje);
 	} 
 
-
 }
-*/
