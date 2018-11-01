@@ -37,7 +37,7 @@ public class FichajeController {
 		hora=(java.time.LocalTime.now()).toString();
 		fecha=(java.time.LocalDate.now()).toString();
 
-		mensaje = "Has abierto to fichaje";
+		mensaje = "Has abierto tu fichaje";
 		//nombre,fecha,hora,estado
 		fichaje = new Fichaje(empleado.getNombre(), fecha, hora,true);
 		return new ModelAndView("fichajes", "mensaje", mensaje);
@@ -49,7 +49,7 @@ public class FichajeController {
 		hora=(java.time.LocalTime.now()).toString();
 		mensaje = "Has cerrado tu fichaje";
 		fichaje.cerrarFichaje(hora, empleado);
-		return new ModelAndView("home", "mensaje", mensaje);
+		return new ModelAndView("fichajes", "mensaje", mensaje);
 	} 
 
 }

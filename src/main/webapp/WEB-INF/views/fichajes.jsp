@@ -7,7 +7,7 @@ import="com.uclm.equipo02.FichajeController"%>
 
 <html lang="en">
 <head>
-<title>Fichajes</title>
+<title>Fichajes | InTime</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -114,11 +114,11 @@ import="com.uclm.equipo02.FichajeController"%>
 					<div class="form-inline text-center" style="margin: auto;">
 
 
-						<form action="abrirFichaje" method="post">
+						<form action="/abrirFichaje" method="POST">
 							<input type="submit" class="btnfichaje input-lg" value="Abrir Fichaje" />
 						</form>
 
-						<form action="cerrarFichaje" method="post">
+						<form action="/cerrarFichaje" method="POST">
 							<input type="submit" class="btnfichaje input-lg" value="Cerrar Fichaje" />
 						</form>
 
