@@ -115,13 +115,11 @@ import="com.uclm.equipo02.FichajeController"%>
 
 
 						<form action="abrirFichaje" method="post">
-							<input type="submit" class="btnfichaje input-lg"
-								name="abrirFichaje" value="Abrir Fichaje" />
+							<input type="submit" class="btnfichaje input-lg" value="Abrir Fichaje" />
 						</form>
 
 						<form action="cerrarFichaje" method="post">
-							<input type="submit" class="btnfichaje input-lg"
-								name="cerrarFichaje" value="Cerrar Fichaje" />
+							<input type="submit" class="btnfichaje input-lg" value="Cerrar Fichaje" />
 						</form>
 
 					</div>

@@ -28,7 +28,7 @@ public class FichajeController {
 		return MV;
 	}
 
-	@RequestMapping(value = "/abrirFichaje")
+	@RequestMapping(value = "/abrirFichaje", method = RequestMethod.POST)
 	public ModelAndView abrirFichaje(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String hora, mensaje;
 		String fecha;
@@ -43,7 +43,7 @@ public class FichajeController {
 		return new ModelAndView("fichajes", "mensaje", mensaje);
 	} 
 
-	@RequestMapping(value = "/cerrarFichaje")
+	@RequestMapping(value = "/cerrarFichaje", method = RequestMethod.POST)
 	public ModelAndView cerrarFichaje(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String hora, mensaje;
 		hora=(java.time.LocalTime.now()).toString();
