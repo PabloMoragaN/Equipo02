@@ -10,7 +10,7 @@ public class Fichaje {
 	
 	
 	////Fichaj con una sola hora de fichaje  y el metodo cerraFIchaje --> horaFichaje=horaSalida
-	///AÑADIR HORA SALIDA Y ACTUALIZAR 
+	///AnADIR HORA SALIDA Y ACTUALIZAR 
 	//Document updateQuery=new Document("nombreEmpleado","")
 	
 	public Fichaje(String nombreEmpleado, String fechaFichaje, String horaFichaje,boolean estado ) {
