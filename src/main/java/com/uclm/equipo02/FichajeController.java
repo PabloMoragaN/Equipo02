@@ -33,7 +33,7 @@ public class FichajeController {
 
 	@RequestMapping(value = "/abrirFichaje", method = RequestMethod.POST)
 	public String abrirFichaje(HttpServletRequest request, Model model) throws Exception {
-		String hora, mensaje;
+		String hora;
 		String fecha;
 		
 		Usuario usuario;
@@ -42,7 +42,7 @@ public class FichajeController {
 		hora=(java.time.LocalTime.now()).toString();
 		fecha=(java.time.LocalDate.now()).toString();
 
-		mensaje = "Has abierto tu fichaje";
+
 		//nombre,fecha,hora,estado
 		Fichaje fichaje = new Fichaje(usuario.getNombre(), fecha, hora,true);
 		fichajedao.abrirFichaje(fichaje);
@@ -56,11 +56,10 @@ public class FichajeController {
 		usuario = (Usuario) request.getSession().getAttribute(usuario_conect);
 		
 		
-		String hora,fecha, mensaje;
+		String hora,fecha;
 		hora=(java.time.LocalTime.now()).toString();
 		fecha=(java.time.LocalDate.now()).toString();
 		
-		mensaje = "Has cerrado tu fichaje";
 		Fichaje fichaje = new Fichaje(usuario.getNombre(), fecha, hora,false);
 		fichajedao.cerrarFichaje(usuario, fichaje);
 		return "fichajes";

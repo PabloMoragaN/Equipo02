@@ -75,7 +75,7 @@ import="com.uclm.equipo02.FichajeController"%>
 
 <body>
 
-	<nav class="navbar navbar-inverse" style="background-color: #337ab7;">
+	<!-- <nav class="navbar navbar-inverse" style="background-color: #337ab7;">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<a class="navbar-brand" href="#"></a>
@@ -92,10 +92,10 @@ import="com.uclm.equipo02.FichajeController"%>
 		</div>
 	</nav>
 
-	<center>
+	 <center>
 		<br /> <img src="http://i65.tinypic.com/s5ybty.png" style="width: %;">
 		<br />
-	</center>
+	</center>-->
 
 
 
@@ -130,7 +130,7 @@ import="com.uclm.equipo02.FichajeController"%>
 
 	</div>
 
-	<div class="container historial-container col-md-6 col-md-offset-3">
+	<!--<div class="container historial-container col-md-6 col-md-offset-3">
 
 		<div class="row">
 			<div class="historial-form">
@@ -138,18 +138,16 @@ import="com.uclm.equipo02.FichajeController"%>
 				<h3>Historial de Fichajes</h3>
 				<form action=" " class="form-inline">
 					<h4>Usuario:</h4>
-					<input type="text" readonly class="form-control-plaintext"
-						id="staticEmail" value="Usuario">
+					<input type="text" class="form-control-plaintext" value="Usuario">
 
 					<h4>Hora Actual:</h4>
-					<input type="text" readonly class="form-control-plaintext"
-						id="staticEmail" value="HH:MM:SS">
+					<input type="text" class="form-control-plaintext" value="HH:MM:SS">
 
 
 			</div>
 		</div>
 
-	</div>
+	</div>-->
 
 	<div class="col-md-6" style="position: fixed; bottom: 0;">
 		<div class="panel-footer">&copy; Copyright 2018 InTime -

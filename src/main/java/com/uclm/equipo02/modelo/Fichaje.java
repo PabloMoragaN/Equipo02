@@ -9,12 +9,16 @@ public class Fichaje {
 	DAOFichaje daofichaje=new DAOFichaje();
 	
 	
-	public Fichaje(String nombreEmpleado, String fechaFichaje, String horaEntrada,boolean estado ) {
+	////Fichaj con una sola hora de fichaje  y el metodo cerraFIchaje --> horaFichaje=horaSalida
+	
+	public Fichaje(String nombreEmpleado, String fechaFichaje, String horaFichaje,boolean estado ) {
 		this.nombreEmpleado=nombreEmpleado;
 		this.fechaFichaje = fechaFichaje;
 		this.horaEntrada = horaEntrada;
 		this.estado = true;	
 	}
+	
+	
 	
 	public String getNombreEmpleado() {
 		return nombreEmpleado;
