@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
   pageEncoding="ISO-8859-1" import="com.uclm.equipo02.FichajeController"%>
  
- <!--  
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,10 +36,10 @@
 </html>
 </body>
 </html>
---> 
 
 
 
+<!--  
 <!DOCTYPE html>
 
 <html>
@@ -192,7 +191,7 @@
 			Equipo02. Todos los derechos reservados.</div>
 	</div>
 </body>
-</html>
+</html>-->
 
 
 

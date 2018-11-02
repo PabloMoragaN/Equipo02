@@ -46,5 +46,8 @@ public class DAOFichaje {
 		broker.updateDoc(fichajes, filtro, documento);
 		fichaje.setEstado(false);
 	}
+	
+	
+	
 
 }

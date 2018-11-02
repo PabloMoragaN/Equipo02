@@ -46,7 +46,6 @@ public class FichajeController {
 		//nombre,fecha,hora,estado
 		Fichaje fichaje = new Fichaje(usuario.getNombre(), fecha, hora,true);
 		fichajedao.abrirFichaje(fichaje);
-		model.addAttribute(alert, "Fichaje abierto");
 		return "fichajes";
 	} 
 
