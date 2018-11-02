@@ -3,7 +3,7 @@ package com.uclm.equipo02.modelo;
 import com.uclm.equipo02.persistencia.DAOFichaje;
 public class Fichaje {
 
-	private String fechaFichaje, horaEntrada, horaSalida, nombreEmpleado;
+	private String fechaFichaje, horaFichaje, horaSalida, nombreEmpleado;
 	private boolean estado; //true=abierto false=cerrado
 	
 	DAOFichaje daofichaje=new DAOFichaje();
@@ -14,7 +14,7 @@ public class Fichaje {
 	public Fichaje(String nombreEmpleado, String fechaFichaje, String horaFichaje,boolean estado ) {
 		this.nombreEmpleado=nombreEmpleado;
 		this.fechaFichaje = fechaFichaje;
-		this.horaEntrada = horaEntrada;
+		this.horaFichaje = horaFichaje;
 		this.estado = true;	
 	}
 	
@@ -29,7 +29,7 @@ public class Fichaje {
 }
 	
 	public void cerrarFichaje(String horaSalida, Usuario usuario) {
-		this.horaSalida = horaSalida;
+		this.horaFichaje = horaSalida;
 		daofichaje.cerrarFichaje(usuario, this);
 	}
 	
@@ -41,10 +41,10 @@ public class Fichaje {
 		this.fechaFichaje = fechaFichaje;
 	}
 	public String getHoraEntrada() {
-		return horaEntrada;
+		return horaFichaje;
 	}
 	public void setHoraFichaje(String horaEntrada) {
-		this.horaEntrada = horaEntrada;
+		this.horaFichaje = horaEntrada;
 	}
 	public String getHoraSalida() {
 		return horaSalida;
