@@ -10,28 +10,31 @@ import com.uclm.equipo02.modelo.Usuario;
 import com.mongodb.client.MongoCollection;
 
 public class DAOFichaje {
-	MongoCollection<Document> fichajes;
-	MongoBroker broker;
 	
 
-	public DAOFichaje() {
-		broker = MongoBroker.get();
-		fichajes = MongoBroker.getCollection("Fichajes");
-	}
-
-
-
+	
+	public MongoCollection<Document> getFichajes() {
+		MongoBroker broker = MongoBroker.get();
+		MongoCollection<Document> fichajes = broker.getCollection("Fichajes");
+		return fichajes;
+}
 	public void abrirFichaje(Fichaje fichaje) {
 		Document documento = new Document();
-		broker.insertDoc(fichajes, documento
-				.append("nombreEmpleado", fichaje.getNombreEmpleado())
-				.append("fechaFichaje", fichaje.getFechaFichaje())
-				.append("horaEntrada", fichaje.getHoraEntrada())
-				.append("horaSalida", null)
-				.append("estado", fichaje.getEstado()));
+		
+		documento.append("nombreEmpleado", fichaje.getNombreEmpleado());
+		documento.append("fechaFichaje", fichaje.getFechaFichaje());
+		documento.append("horaEntrada", fichaje.getHoraEntrada());
+		documento.append("horaSalida", null);
+		documento.append("estado", fichaje.getEstado());
+		
+		MongoCollection<Document> fichajes = getFichajes();
+		fichajes.insertOne(documento);
 	}
 
 	public void cerrarFichaje(Usuario usuario, Fichaje fichaje) {
+		MongoCollection<Document> fichajes = getFichajes();
+		MongoBroker broker = MongoBroker.get();
+		
 		Document documento = new Document();
 		Document filtro = new Document();
 		Document cambio = new Document();
