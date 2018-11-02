@@ -12,16 +12,16 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.uclm.equipo02.modelo.Fichaje;
 import com.uclm.equipo02.modelo.Usuario;
+import com.uclm.equipo02.persistencia.DAOFichaje;
 
 
 @Controller
 public class FichajeController {
 
-	Usuario empleado = new Usuario();
+	DAOFichaje fichajedao = new DAOFichaje();
 
-	Fichaje fichaje;
-	
 	private final String alert = "alerta";
+	private final String usuario_conect = "usuarioConectado";
 
 
 	@RequestMapping("fichajes")
@@ -32,28 +32,39 @@ public class FichajeController {
 	}
 
 	@RequestMapping(value = "/abrirFichaje", method = RequestMethod.POST)
-	public ModelAndView abrirFichaje(HttpServletRequest request, Model model) throws Exception {
+	public String abrirFichaje(HttpServletRequest request, Model model) throws Exception {
 		String hora, mensaje;
 		String fecha;
-
+		
+		Usuario usuario;
+		usuario = (Usuario) request.getSession().getAttribute(usuario_conect);
 
 		hora=(java.time.LocalTime.now()).toString();
 		fecha=(java.time.LocalDate.now()).toString();
 
 		mensaje = "Has abierto tu fichaje";
 		//nombre,fecha,hora,estado
-		fichaje = new Fichaje(empleado.getNombre(), fecha, hora,true);
+		Fichaje fichaje = new Fichaje(usuario.getNombre(), fecha, hora,true);
+		fichajedao.abrirFichaje(fichaje);
 		model.addAttribute(alert, "Fichaje abierto");
-		return new ModelAndView("fichajes", "mensaje", mensaje);
+		return "fichajeinsertado";
 	} 
 
 	@RequestMapping(value = "/cerrarFichaje", method = RequestMethod.POST)
 	public ModelAndView cerrarFichaje(HttpServletRequest request, Model model) throws Exception {
-		String hora, mensaje;
+		Usuario usuario;
+		usuario = (Usuario) request.getSession().getAttribute(usuario_conect);
+		
+		
+		String hora,fecha, mensaje;
 		hora=(java.time.LocalTime.now()).toString();
+		fecha=(java.time.LocalDate.now()).toString();
+		
 		mensaje = "Has cerrado tu fichaje";
-		fichaje.cerrarFichaje(hora, empleado);
+		Fichaje fichaje = new Fichaje(usuario.getNombre(), fecha, hora,false);
+		fichajedao.cerrarFichaje(usuario, fichaje);
 		return new ModelAndView("fichajes", "mensaje", mensaje);
 	} 
+	
 
 }

@@ -13,8 +13,7 @@ public class Fichaje {
 		this.nombreEmpleado=nombreEmpleado;
 		this.fechaFichaje = fechaFichaje;
 		this.horaEntrada = horaEntrada;
-		this.estado = true;
-		daofichaje.abrirFichaje(this);		
+		this.estado = true;	
 	}
 	
 	public String getNombreEmpleado() {
