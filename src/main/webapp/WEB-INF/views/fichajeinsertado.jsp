@@ -8,5 +8,7 @@
 </head>
 <body>
 
+	<h1>Fichaje Insertado</h1>
+	
 </body>
 </html>
