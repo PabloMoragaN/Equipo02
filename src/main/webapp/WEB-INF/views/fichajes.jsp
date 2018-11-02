@@ -5,7 +5,7 @@ import="com.uclm.equipo02.FichajeController"%>
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
 <head>
 <title>Fichajes | InTime</title>
 <meta charset="utf-8">
@@ -107,7 +107,7 @@ import="com.uclm.equipo02.FichajeController"%>
 
 
 
-			<div class="gestion-form center-div">
+			<div class="gestion-form">
 				<h3>Gestión y Validación de Fichajes</h3>
 				<form>
 
@@ -115,11 +115,11 @@ import="com.uclm.equipo02.FichajeController"%>
 
 
 						<form action="abrirFichaje" method="post">
-							<input type="submit" class="btnfichaje input-lg" value="Abrir Fichaje" />
+							<input type="submit" class="btnfichaje" value="Abrir Fichaje" />
 						</form>
 
 						<form action="cerrarFichaje" method="post">
-							<input type="submit" class="btnfichaje input-lg" value="Cerrar Fichaje" />
+							<input type="submit" class="btnfichaje" value="Cerrar Fichaje" />
 						</form>
 
 					</div>
@@ -149,9 +149,9 @@ import="com.uclm.equipo02.FichajeController"%>
 
 	</div>-->
 
-	<div class="col-md-6" style="position: fixed; bottom: 0;">
+	<!--<div class="col-md-6" style="position: fixed; bottom: 0;">
 		<div class="panel-footer">&copy; Copyright 2018 InTime -
 			Equipo02. Todos los derechos reservados.</div>
-	</div>
+	</div>-->
 </body>
 </html>
