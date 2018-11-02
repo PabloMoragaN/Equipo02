@@ -47,11 +47,11 @@ public class FichajeController {
 		Fichaje fichaje = new Fichaje(usuario.getNombre(), fecha, hora,true);
 		fichajedao.abrirFichaje(fichaje);
 		model.addAttribute(alert, "Fichaje abierto");
-		return "fichajeinsertado";
+		return "fichajes";
 	} 
 
 	@RequestMapping(value = "/cerrarFichaje", method = RequestMethod.POST)
-	public ModelAndView cerrarFichaje(HttpServletRequest request, Model model) throws Exception {
+	public String cerrarFichaje(HttpServletRequest request, Model model) throws Exception {
 		Usuario usuario;
 		usuario = (Usuario) request.getSession().getAttribute(usuario_conect);
 		
@@ -63,7 +63,7 @@ public class FichajeController {
 		mensaje = "Has cerrado tu fichaje";
 		Fichaje fichaje = new Fichaje(usuario.getNombre(), fecha, hora,false);
 		fichajedao.cerrarFichaje(usuario, fichaje);
-		return new ModelAndView("fichajes", "mensaje", mensaje);
+		return "fichajes";
 	} 
 	
 
