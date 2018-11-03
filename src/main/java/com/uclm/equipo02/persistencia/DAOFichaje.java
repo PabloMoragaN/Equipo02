@@ -76,6 +76,7 @@ public class DAOFichaje {
 		updateQuery.append("nombreEmpleado","usuario.getNombre()");
 		updateQuery.append("fechaFichaje",fichaje.getFechaFichaje());
 		fichajes.updateOne(updateQuery,new Document("set",new Document("horaSalida",fichaje.getHoraSalida())));
+		fichajes.updateOne(updateQuery,new Document("set",new Document("estado",fichaje.getEstado())));
 		
 
 		/*Document documento = new Document();

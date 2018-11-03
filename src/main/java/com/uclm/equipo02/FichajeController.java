@@ -67,12 +67,15 @@ public class FichajeController {
 		fecha=(java.time.LocalDate.now()).toString();
 		
 		Fichaje fichaje = new Fichaje(usuario.getNombre(), fecha,horaentrada,horaactual,false);
-		if(!fichaje.fichajeCierre(usuario.getNombre(), fecha, false)) {
+		
+		fichajedao.cerrarFichaje(usuario, fichaje);
+		return "fichajes";
+		/*if(!fichaje.fichajeCierre(usuario.getNombre(), fecha, false)) {
 			return "fichajes";
 		}else {
 			fichajedao.cerrarFichaje(usuario, fichaje);
 			return "fichajes";
-		}
+		}*/
 		
 	} 
 	
