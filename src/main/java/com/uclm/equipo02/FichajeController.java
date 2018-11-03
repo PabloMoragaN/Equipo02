@@ -51,6 +51,11 @@ public class FichajeController {
 		return "fichajes";
 	} 
 
+	
+	
+	////HACER VALIDEZ ABRIR, PARA PODER ABRIR DOS O MAS FICHAJES EN UN MISMO DIA, TODOS LOS FICHAJES DE ESE DIA DEBEN DE ESTAR CERRADOS
+	///COMPROBAR QUE AL CERRAR EL SEGUNDO FICHAJE DEL DIA NO ACTUALIZE EL PRIMER FICHAJE DEL DIA
+	
 	@RequestMapping(value = "/cerrarFichaje", method = RequestMethod.POST)
 	public String cerrarFichaje(HttpServletRequest request, Model model) throws Exception {
 		Usuario usuario;

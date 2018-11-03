@@ -64,6 +64,7 @@ public class DAOFichaje {
 	}
 
 	////HACER VALIDEZ ABRIR, PARA PODER ABRIR DOS O MAS FICHAJES EN UN MISMO DIA, TODOS LOS FICHAJES DE ESE DIA DEBEN DE ESTAR CERRADOS
+	///COMPROBAR QUE AL CERRAR EL SEGUNDO FICHAJE DEL DIA NO ACTUALIZE EL PRIMER FICHAJE DEL DIA
 	
 	public boolean validezCerrado(String nombreEmpleado, String fecha, boolean estado) {
 		Document documento = new Document();
