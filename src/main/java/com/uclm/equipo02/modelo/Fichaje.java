@@ -19,7 +19,7 @@ public class Fichaje {
 		this.fechaFichaje = fechaFichaje;
 		this.horaFichaje = horaFichaje;
 		this.horaSalida=horaSalida;
-		this.estado = true;	//Tru--> Fichaje Abierto False--> Fichaje Cerrado
+		this.estado = estado;	//Tru--> Fichaje Abierto False--> Fichaje Cerrado
 	}
 	
 	
