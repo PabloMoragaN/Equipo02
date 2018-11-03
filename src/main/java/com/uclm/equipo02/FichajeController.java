@@ -38,8 +38,10 @@ public class FichajeController {
 		
 		Usuario usuario;
 		usuario = (Usuario) request.getSession().getAttribute(usuario_conect);
-
-		hora=(java.time.LocalTime.now()).toString();
+		
+		
+		hora=fichajedao.getCurrentTimeUsingCalendar();
+		//hora=(java.time.LocalTime.now()).toString();
 		fecha=(java.time.LocalDate.now()).toString();
 
 
@@ -63,7 +65,9 @@ public class FichajeController {
 		
 		
 		String horaactual;
-		horaactual=(java.time.LocalTime.now()).toString();
+		
+		//horaactual=(java.time.LocalTime.now()).toString();
+		horaactual=fichajedao.getCurrentTimeUsingCalendar();
 		fecha=(java.time.LocalDate.now()).toString();
 		
 		Fichaje fichaje = new Fichaje(usuario.getNombre(), fecha,horaentrada,horaactual,false);

@@ -1,6 +1,11 @@
 package com.uclm.equipo02.persistencia;
 
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 import org.bson.BsonDocument;
 import org.bson.Document;
 
@@ -32,7 +37,16 @@ public class DAOFichaje {
 		fichajes.insertOne(documento);
 	}
 
-
+	public static String getCurrentTimeUsingCalendar() {
+        Calendar cal = Calendar.getInstance();
+        Date date=cal.getTime();
+        DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+        String formattedTime=dateFormat.format(date);
+        return formattedTime;
+    }
+	
+	
+	
 	public String getHoraEntrada(String nombreEmpleado, String fechaFichaje) {
 		String horaentrada="";
 		Document documento = new Document();
@@ -49,11 +63,8 @@ public class DAOFichaje {
 
 	}
 
-	/***
-	 * 
-	 * @method comprueba que el fichaje este abierto y sea en la misma fecha 
-	 *
-	 */
+	////HACER VALIDEZ ABRIR, PARA PODER ABRIR DOS O MAS FICHAJES EN UN MISMO DIA, TODOS LOS FICHAJES DE ESE DIA DEBEN DE ESTAR CERRADOS
+	
 	public boolean validezCerrado(String nombreEmpleado, String fecha, boolean estado) {
 		Document documento = new Document();
 		MongoCursor<Document> elementos = getFichajes().find().iterator();
