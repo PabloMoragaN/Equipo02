@@ -31,11 +31,7 @@ public class Fichaje {
 	public void setNombreEmpleado(String nombreEmpleado) {
 		this.nombreEmpleado = nombreEmpleado;
 }
-	
-	public void cerrarFichaje(String horaSalida, Usuario usuario) {
-		this.horaSalida = horaSalida;
-		daofichaje.cerrarFichaje(usuario, this);
-	}
+
 	public boolean fichajeCierre(String nombreEmpleado, String fechaFichaje, boolean estado) {
 		return daofichaje.validezCerrado(nombreEmpleado, fechaFichaje, estado);
 }

@@ -86,9 +86,8 @@ public class DAOFichaje {
 		
 		Document changes=new Document();
 		
-		changes.put("horaSalida", fichaje.getHoraSalida());
 		changes.put("estado", fichaje.getEstado());
-		
+		changes.put("horaSalida", fichaje.getHoraSalida());
 		Document doc = new Document();
 		doc.put("$set", changes);
 		
