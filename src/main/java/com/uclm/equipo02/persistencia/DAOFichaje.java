@@ -5,6 +5,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.TimeZone;
 
 import org.bson.BsonDocument;
 import org.bson.Document;
@@ -41,8 +42,10 @@ public class DAOFichaje {
         Calendar cal = Calendar.getInstance();
         Date date=cal.getTime();
         DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+        dateFormat.setTimeZone(TimeZone.getTimeZone("Europe/Madrid"));
         String formattedTime=dateFormat.format(date);
         return formattedTime;
+        
     }
 	
 	
