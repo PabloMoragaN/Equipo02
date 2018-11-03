@@ -41,7 +41,6 @@ public class FichajeController {
 		
 		
 		hora=fichajedao.getCurrentTimeUsingCalendar();
-		//hora=(java.time.LocalTime.now()).toString();
 		fecha=(java.time.LocalDate.now()).toString();
 
 
@@ -67,15 +66,14 @@ public class FichajeController {
 		String fecha;
 		fecha=(java.time.LocalDate.now()).toString();
 		
-		//Al no poder trabajar mas de 8 horas los fichajes entre dias quedan descartados, el criterio de busqueda se rige por nombre
-		//de empleado y la fecha del dia actual para poder cerrar el fichaje
+		/**Al no poder trabajar mas de 8 horas los fichajes entre dias quedan descartados, el criterio de busqueda se rige por nombre
+		de empleado y la fecha del dia actual para poder cerrar el fichaje, si los criterios de aception cambian y debemos hacer fichajes entre dias
+		se arreglaria introduciendo un ID al fichaje como criterio de busqueda en la BBD**/
 		String horaentrada;
 		horaentrada=fichajedao.getHoraEntrada(usuario.getNombre(),fecha);
 		
 		
 		String horaactual;
-		
-		//horaactual=(java.time.LocalTime.now()).toString();
 		horaactual=fichajedao.getCurrentTimeUsingCalendar();
 		fecha=(java.time.LocalDate.now()).toString();
 		
