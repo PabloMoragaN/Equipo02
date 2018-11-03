@@ -38,11 +38,11 @@ public class MongoBroker {
 		return result;
 	}
 	
-	public void insertDoc(MongoCollection<Document> colection, Document documento) {
-		colection.insertOne(documento);
+	public void insertDoc(MongoCollection<Document> collection, Document documento) {
+		collection.insertOne(documento);
 	}
 	
-	public void updateDoc(MongoCollection<Document> colection, Document filtro, Document documento) {
-		colection.updateOne(filtro, documento);
+	public void updateDoc(MongoCollection<Document> collection, Document filtro, Document documento) {
+		collection.updateOne(filtro, documento);
 }
 }

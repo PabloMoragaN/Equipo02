@@ -72,27 +72,30 @@ public class DAOFichaje {
 		MongoCollection<Document> fichajes = getFichajes();
 		MongoBroker broker = MongoBroker.get();
 		
-		Document updateQuery=new Document();
+		/*Document updateQuery=new Document();
 		updateQuery.append("nombreEmpleado","usuario.getNombre()");
 		updateQuery.append("fechaFichaje",fichaje.getFechaFichaje());
 		fichajes.updateOne(updateQuery,new Document("set",new Document("horaSalida",fichaje.getHoraSalida())));
-		fichajes.updateOne(updateQuery,new Document("set",new Document("estado",fichaje.getEstado())));
+		fichajes.updateOne(updateQuery,new Document("set",new Document("estado",fichaje.getEstado())));*/
 		
-
-		/*Document documento = new Document();
-		Document filtro = new Document();
-		Document cambio = new Document();
-		filtro.put("nombre", usuario.getNombre());
-		filtro.put("estado", true);
-		cambio.put("horaSalida", fichaje.getHoraSalida());
-		cambio.put("estado", false);
-		documento.put("$set", cambio);
-		broker.updateDoc(fichajes, filtro, documento);
-		fichaje.setEstado(false);*/
+		
+		Document criteria=new Document();
+		
+		criteria.put("nombreEmpleado", usuario.getNombre());
+		criteria.put("fechaFichaje", fichaje.getFechaFichaje());
+		
+		Document changes=new Document();
+		
+		changes.put("horaSalida", fichaje.getHoraSalida());
+		changes.put("estado", fichaje.getEstado());
+		
+		Document doc = new Document();
+		doc.put("$set", changes);
+		
+		broker.updateDoc(fichajes, criteria, doc);
+		
+		
 	}
-
-	//Document updateQuery=new Document("usuario.getNombre()","usuario.getNombre()");
-	//fichajes.updateOne(updateQuery,new Document("set",new Document("usuario.getNombre")))
 
 
 }
