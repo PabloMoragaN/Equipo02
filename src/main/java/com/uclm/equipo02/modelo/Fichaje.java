@@ -11,13 +11,15 @@ public class Fichaje {
 	
 	////Fichaj con una sola hora de fichaje  y el metodo cerraFIchaje --> horaFichaje=horaSalida
 	///AnADIR HORA SALIDA Y ACTUALIZAR 
-	//Document updateQuery=new Document("nombreEmpleado","")
+	//Document updateQuery=new Document("usuario.getNombre()","usuario.getNombre()");
+	//fichajes.updateOne(updateQuery,new Document("set",new Document("usuario.getNombre")))
 	
-	public Fichaje(String nombreEmpleado, String fechaFichaje, String horaFichaje,boolean estado ) {
+	public Fichaje(String nombreEmpleado, String fechaFichaje, String horaFichaje,String horaSalida,boolean estado ) {
 		this.nombreEmpleado=nombreEmpleado;
 		this.fechaFichaje = fechaFichaje;
 		this.horaFichaje = horaFichaje;
-		this.estado = true;	
+		this.horaSalida=horaSalida;
+		this.estado = true;	//Tru--> Fichaje Abierto False--> Fichaje Cerrado
 	}
 	
 	
@@ -31,9 +33,12 @@ public class Fichaje {
 }
 	
 	public void cerrarFichaje(String horaSalida, Usuario usuario) {
-		this.horaFichaje = horaSalida;
+		this.horaSalida = horaSalida;
 		daofichaje.cerrarFichaje(usuario, this);
 	}
+	public boolean fichajeCierre(String nombreEmpleado, String fechaFichaje, boolean estado) {
+		return daofichaje.validezCerrado(nombreEmpleado, fechaFichaje, estado);
+}
 	
 	
 	public String getFechaFichaje() {
