@@ -75,19 +75,60 @@ public class DAOFichaje {
 
 	}
 
-	public boolean validezCerrado(String nombreEmpleado, String fecha, boolean estado) {
+	
+	/**
+	 * 
+	 * @method Comprueba que si hay un fichaje abierto, no puedas abrir otro fichaje antes de cerrar el anterior
+	 * 
+	 */
+	public boolean validezAbierto(Fichaje fichaje) {
 		Document documento = new Document();
 		MongoCursor<Document> elementos = getFichajes().find().iterator();
 		while(elementos.hasNext()) {
 			documento = elementos.next();
-			if(documento.get("nombreEmpleado").toString().equalsIgnoreCase(nombreEmpleado))
-				if(documento.get("fechaFichaje").toString().equals(fecha))
-					if(documento.get("estado").toString().equals(Boolean.toString(estado)))
+			if(documento.get("nombreEmpleado").toString().equalsIgnoreCase(fichaje.getNombreEmpleado()))//usuario sesion
+				if(documento.get("fechaFichaje").toString().equals(fichaje.getFechaFichaje()))
+					if(documento.get("estado").toString().equals(Boolean.toString(true)))
+						return false;
+
+		}
+		return true;
+	}
+	
+	
+	/**
+	 * 
+	 * @method Comprobacion de cerrado???? Si esta cerrado, no puedes cerrar, Necesitas abrir uno nuevo
+	 */
+	
+	public boolean validezCerrado(String nombreEmpleado, String fechaFichaje, boolean estado) {
+		Document documento = new Document();
+		MongoCursor<Document> elementos = getFichajes().find().iterator();
+		while(elementos.hasNext()) {
+			documento = elementos.next();
+			if(documento.get("nombreEmpleado").toString().equalsIgnoreCase(nombreEmpleado))//usuario sesion
+				if(documento.get("fechaFichaje").toString().equals(fechaFichaje))
+					if(documento.get("estado").toString().equals(estado))
+						return false;
+
+		}
+		return true;
+	}
+	
+	public boolean creacionVarios(Fichaje fichaje) {
+		Document documento = new Document();
+		MongoCursor<Document> elementos = getFichajes().find().iterator();
+		while(elementos.hasNext()) {
+			documento = elementos.next();
+			if(documento.get("nombreEmpleado").toString().equalsIgnoreCase(fichaje.getNombreEmpleado()))
+				if(documento.get("fechaFichaje").toString().equals(fichaje.getFechaFichaje()))
+					if(documento.get("estado").toString().equals(Boolean.toString(fichaje.getEstado())))
 						return true;
 
 		}
 		return false;
 	}
+	
 
 	/**
 	 * 
