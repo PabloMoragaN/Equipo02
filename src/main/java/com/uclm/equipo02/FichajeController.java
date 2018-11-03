@@ -46,8 +46,9 @@ public class FichajeController {
 
 		Fichaje fichaje = new Fichaje(usuario.getNombre(), fecha, hora,null,true);
 
-		if(!fichajedao.validezAbierto(fichaje)) {
-			request.setAttribute("errorMessage", "No puedes abrir otro fichaje, necesitas cerrar tu fichaje actual");
+		if(!fichajedao.validezAbierto(fichaje)) {///FUNCIONA PERO NO SALE EL MENSAJE
+			model.addAttribute("errorMessage", "No puedes abrir otro fichaje, necesitas cerrar tu fichaje actual");
+			
 		}else {
 			fichajedao.abrirFichaje(fichaje);
 		}
