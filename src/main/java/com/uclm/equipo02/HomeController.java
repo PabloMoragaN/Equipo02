@@ -41,6 +41,7 @@ public class HomeController {
 	private final String rol = "rol";
 	private final String welcome = "welcome";
 	private final String alert = "alerta";
+	private final String fichajes= "fichajes";
 	
 	UsuarioDaoImplement userDao = new UsuarioDaoImplement();
 	
@@ -104,7 +105,7 @@ public class HomeController {
 		
 		if (userDao.login(usuario) && request.getSession().getAttribute(usuario_conect) == null) {
 			request.getSession().setAttribute(usuario_conect, usuario);
-			return "fichajes";
+			return fichajes;
 		}else {
 
 		model.addAttribute(alert, "Usuario y/o clave incorrectos");

@@ -98,17 +98,17 @@ public class DAOFichaje {
 	
 	/**
 	 * 
-	 * @method Comprobacion de cerrado???? Si esta cerrado, no puedes cerrar, Necesitas abrir uno nuevo
+	 * @method Comprueba si no hay algun fichaje abierto que se puede cerrar. Si no hay ninguno abierto, tienes que crear uno nuevo.
 	 */
 	
-	public boolean validezCerrado(String nombreEmpleado, String fechaFichaje, boolean estado) {
+	public boolean validezCerrado(Fichaje fichaje) {
 		Document documento = new Document();
 		MongoCursor<Document> elementos = getFichajes().find().iterator();
 		while(elementos.hasNext()) {
 			documento = elementos.next();
-			if(documento.get("nombreEmpleado").toString().equalsIgnoreCase(nombreEmpleado))//usuario sesion
-				if(documento.get("fechaFichaje").toString().equals(fechaFichaje))
-					if(documento.get("estado").toString().equals(estado))
+			if(documento.get("nombreEmpleado").toString().equalsIgnoreCase(fichaje.getNombreEmpleado()))//usuario sesion
+				if(documento.get("fechaFichaje").toString().equals(fichaje.getFechaFichaje()))
+					if(documento.get("estado").toString().equals(Boolean.toString(false)))
 						return false;
 
 		}
