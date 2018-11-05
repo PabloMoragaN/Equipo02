@@ -126,7 +126,7 @@ function myFunction() {
   
   
   <p>
-	 <form class"historial-form" action="listarFichajesEmpleado"  method="post">
+	 <form action="listarFichajesEmpleado"  method="post">
 		<table align="center" border="1" width: 100%>
 			<thead class="thead">
 				<tr>
