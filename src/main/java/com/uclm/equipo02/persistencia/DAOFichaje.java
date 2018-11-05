@@ -107,6 +107,18 @@ public class DAOFichaje {
 		return horaentrada;
 
 	}
+	
+	public int getLastID() {
+		int counter = 0;
+		Document documento = new Document();
+		MongoCursor<Document> elementos = getFichajes().find().iterator();
+		while(elementos.hasNext()) {
+			counter++;
+		}
+		
+		return counter;
+		
+	}
 
 
 	/**
