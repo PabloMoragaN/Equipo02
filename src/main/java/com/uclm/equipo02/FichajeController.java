@@ -72,7 +72,7 @@ public class FichajeController {
 	TENDRIA QUE COGER EL HORA DE FICHAJE MAS ACTUAL Y ACTUALIZAR Y CERRAR ESE
 	
 	COMPROBAR TAMBIEN QUE SE CIERRE EL ULTIMO FICHAJE aunque eso croe que se comprueba con el hehco de no poder abrir ningun 
-	fichaje hasta que se cierre el que está abierto
+	fichaje hasta que se cierre el que esta abierto
 	**/
 
 	@RequestMapping(value = "/cerrarFichaje", method = RequestMethod.POST)
