@@ -94,7 +94,7 @@ public class FichajeController {
 		horaactual=fichajedao.getCurrentTimeUsingCalendar();
 		fecha=(java.time.LocalDate.now()).toString();
 
-		Fichaje fichaje = new Fichaje(fichajedao.getLastID()+1,usuario.getNombre(), fecha,horaentrada,horaactual,false);;
+		Fichaje fichaje = new Fichaje(fichajedao.getLastID(),usuario.getNombre(), fecha,horaentrada,horaactual,false);;
 		
 		if(fichajedao.validezCerrado(fichaje)) {///FUNCIONA PERO NO SALE EL MENSAJE
 			fichajedao.cerrarFichaje(usuario, fichaje);
