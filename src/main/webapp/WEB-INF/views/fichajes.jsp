@@ -12,7 +12,7 @@
 	
 </script>
 <link rel="stylesheet" href="css/estilos.css">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"
 	rel="stylesheet" media="screen">
@@ -96,16 +96,13 @@ function myFunction() {
 		<input type="submit" name="cerrarFichaje" value="Cerrar Fichaje" />
 	</form>
   
-  <form action="cerrarFichaje" method="post">
-  	<input type="submit" name="cerrarFichaje" value="Cerrar Fichaje" />
-	</form>
   
   
  <button onclick="myFunction()">Mostrar Fichajes</button>
 
   <div id="listaFichajes"class="container historial-container col-md-6 col-md-offset-3">
   <form class"historial-form" action="listarFichajeEmpleado"  method="post">
-		<table class="table table-bordered  table-dark ">
+		<table class="table table-bordered table-dark ">
 			<thead class="thead">
 				<tr>
 					<th scope="col">Fecha</th>
