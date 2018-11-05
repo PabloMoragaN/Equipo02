@@ -50,7 +50,6 @@ public class DAOFichaje {
 	public void abrirFichaje(Fichaje fichaje) {
 		Document documento = new Document();
 		
-		documento.append("id",fichaje.getidFichaje());
 		documento.append("nombreEmpleado", fichaje.getNombreEmpleado());
 		documento.append("fechaFichaje", fichaje.getFechaFichaje());
 		documento.append("horaEntrada", fichaje.getHoraEntrada());
@@ -74,7 +73,6 @@ public class DAOFichaje {
 
 		Document criteria=new Document();
 		
-		criteria.put("id", fichaje.getidFichaje());
 		criteria.put("nombreEmpleado", usuario.getNombre());
 		criteria.put("fechaFichaje", fichaje.getFechaFichaje());
 
@@ -101,7 +99,6 @@ public class DAOFichaje {
 		MongoCursor<Document> elementos = getFichajes().find().iterator();
 		while(elementos.hasNext()) {
 			documento = elementos.next();
-			
 			if(documento.get("nombreEmpleado").toString().equalsIgnoreCase(nombreEmpleado))
 				if(documento.get("fechaFichaje").toString().equals(fechaFichaje))
 					horaentrada=documento.getString("horaEntrada");
@@ -111,17 +108,6 @@ public class DAOFichaje {
 
 	}
 	
-	public int getLastID() {
-		int counter = 0;
-		Document documento = new Document();
-		MongoCursor<Document> elementos = getFichajes().find().iterator();
-		while(elementos.hasNext()) {
-			counter++;
-		}
-		
-		return counter;
-		
-	}
 
 
 	/**
@@ -155,7 +141,6 @@ public class DAOFichaje {
 		MongoCursor<Document> elementos = getFichajes().find().iterator();
 		while(elementos.hasNext()) {
 			documento = elementos.next();
-			if(documento.get("id").toString().equalsIgnoreCase(String.valueOf(fichaje.getidFichaje())))
 				if(documento.get("nombreEmpleado").toString().equalsIgnoreCase(fichaje.getNombreEmpleado()))//usuario sesion
 					if(documento.get("fechaFichaje").toString().equals(fichaje.getFechaFichaje()))
 						//if(documento.get("horaEntrada").toString().equalsIgnoreCase(fichaje.getHoraEntrada()))

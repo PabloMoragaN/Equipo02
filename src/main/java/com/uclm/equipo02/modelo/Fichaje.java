@@ -4,7 +4,7 @@ import com.uclm.equipo02.persistencia.DAOFichaje;
 public class Fichaje {
 
 	private String fechaFichaje, horaFichaje, horaSalida, nombreEmpleado;
-	private int idFichaje;
+
 	private boolean estado; //true=abierto false=cerrado
 
 	DAOFichaje daofichaje=new DAOFichaje();
@@ -15,8 +15,7 @@ public class Fichaje {
 	//Document updateQuery=new Document("usuario.getNombre()","usuario.getNombre()");
 	//fichajes.updateOne(updateQuery,new Document("set",new Document("usuario.getNombre")))
 
-	public Fichaje(int idFichaje,String nombreEmpleado, String fechaFichaje, String horaFichaje,String horaSalida,boolean estado ) {
-		this.idFichaje=idFichaje;
+	public Fichaje(String nombreEmpleado, String fechaFichaje, String horaFichaje,String horaSalida,boolean estado ) {
 		this.nombreEmpleado=nombreEmpleado;
 		this.fechaFichaje = fechaFichaje;
 		this.horaFichaje = horaFichaje;
@@ -25,14 +24,7 @@ public class Fichaje {
 	}
 
 
-	public int getidFichaje() {
-		return idFichaje;
-	}
 
-	public void setidFichaje(int idFichaje) {
-		this.idFichaje = idFichaje;
-	}
-	
 	
 
 	public String getNombreEmpleado() {
