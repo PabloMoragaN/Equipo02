@@ -154,7 +154,8 @@ public class DAOFichaje {
 		Document documento = new Document();
 		MongoCursor<Document> elementos = getFichajes().find().iterator();
 		while(elementos.hasNext()) {
-			documento = elementos.next();		
+			documento = elementos.next();
+			if(documento.get("id").toString().equalsIgnoreCase(String.valueOf(fichaje.getidFichaje())))
 				if(documento.get("nombreEmpleado").toString().equalsIgnoreCase(fichaje.getNombreEmpleado()))//usuario sesion
 					if(documento.get("fechaFichaje").toString().equals(fichaje.getFechaFichaje()))
 						//if(documento.get("horaEntrada").toString().equalsIgnoreCase(fichaje.getHoraEntrada()))
