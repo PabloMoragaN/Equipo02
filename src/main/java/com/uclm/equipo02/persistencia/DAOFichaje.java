@@ -132,6 +132,7 @@ public class DAOFichaje {
 	/**
 	 * 
 	 * @method Comprueba si no hay algun fichaje abierto que se puede cerrar. Si no hay ninguno abierto, tienes que crear uno nuevo.
+	 * Tambien comprueba que se actualiza el ultimo fichaje creado
 	 */
 
 	public boolean validezCerrado(Fichaje fichaje) {
@@ -139,7 +140,7 @@ public class DAOFichaje {
 		MongoCursor<Document> elementos = getFichajes().find().iterator();
 		while(elementos.hasNext()) {
 			documento = elementos.next();
-			while(documento.get("horaEntrada").toString().equalsIgnoreCase(fichaje.getHoraEntrada())) {
+			if(documento.get("horaEntrada").toString().equalsIgnoreCase(fichaje.getHoraEntrada())) {
 				if(documento.get("nombreEmpleado").toString().equalsIgnoreCase(fichaje.getNombreEmpleado()))//usuario sesion
 					if(documento.get("fechaFichaje").toString().equals(fichaje.getFechaFichaje()))
 						if(documento.get("estado").toString().equals(Boolean.toString(false)))
