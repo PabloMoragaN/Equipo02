@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
   pageEncoding="ISO-8859-1" import="com.uclm.equipo02.FichajeController"%>
- 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +18,71 @@
 	rel="stylesheet" media="screen">
 <title>Home</title>
 </head>
+
+<style>
+.fichaje-container {
+  margin-top: 5%;
+	margin-bottom: 5%;
+}
+
+.historial-container {
+	margin-top: 10%;
+}
+
+.gestion-form {
+	padding: 5%;
+	box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0
+		rgba(0, 0, 0, 0.19);
+}
+
+.gestion-form h3 {
+	text-align: center;
+	color: #333;
+}
+
+.historial-form {
+	padding: 5%;
+	background: #0062cc;
+	box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0
+		rgba(0, 0, 0, 0.19);
+}
+
+.historial-form h3 {
+	text-align: center;
+	color: #fff;
+}
+
+.historial-form h4 {
+	color: #fff;
+}
+
+.btnfichaje {
+	width: 50%;
+	border-radius: 2rem;
+	padding: 0%;
+	border: solid;
+	cursor: pointer;
+}
+
+.gestion-form .btnfichaje {
+	font-weight: 600;
+	color: #fff;
+	background-color: #0062cc;
+}
+
+</style>
 <body>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("listaFichajes");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
 
 	<h1 align="center">EQUIPO 02</h1>
 	</br>
@@ -29,14 +93,46 @@
 	<form action="cerrarFichaje" method="post">
 		<input type="submit" name="cerrarFichaje" value="Cerrar Fichaje" />
 	</form>
-	
+  
+  <form action="cerrarFichaje" method="post">
+  	<input type="submit" name="cerrarFichaje" value="Cerrar Fichaje" />
+	</form>
+  
+  
+ <button onclick="myFunction()">Mostrar Fichajes</button>
 
-	
+  <div id="listaFichajes"class="container historial-container col-md-6 col-md-offset-3">
+  <form class"historial-form" action="listarFichajeEmpleado"  method="post">
+		<table class="table table-bordered  table-dark ">
+			<thead class="thead">
+				<tr>
+					<th scope="col">Fecha</th>
+					<th scope="col">Entrada</th>
+					<th scope="col">Salida</th>
+					<th scope="col">Estado</th>
+
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach var="fich" items="${fichajes}">
+					<td>${fich.fechaFichaje}</td>
+					<td>${fich.horaFichaje}</td>
+					<td>${fich.horaCierre}</td>
+					<td>${fich.estado}</td>
+				</c:forEach>
+			</tbody>
+		</table>
+	</form>
+  </div> 
+  
+
+
+
+
 </body>
 </html>
 </body>
 </html>
-
 
 
 <!--  

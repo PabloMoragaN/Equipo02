@@ -3,8 +3,10 @@ package com.uclm.equipo02.persistencia;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.TimeZone;
 
 import org.bson.BsonDocument;
@@ -58,6 +60,36 @@ public class DAOFichaje {
 		fichajes.insertOne(documento);//se podria cambiar a broker.insertDoc(fichajes, documento) para concordar con cerrarFichaje
 	}
 
+	
+	/**
+	 * 
+	 * @method Metodo de cierre de Fichajes, el metodo utiliza el criterio de nombredeEmpleado (el de la current sesion), 
+	 * y la fecha del fichaje (asumiendo que no se necesitan fichajes entre dias) y cambia el estado y la horaSalida accediendo al mongoBroker
+	 * que updatea el documento
+	 */
+	public void cerrarFichaje(Usuario usuario, Fichaje fichaje) {
+		MongoCollection<Document> fichajes = getFichajes();
+		MongoBroker broker = MongoBroker.get();
+
+		Document criteria=new Document();
+
+		criteria.put("nombreEmpleado", usuario.getNombre());
+		criteria.put("fechaFichaje", fichaje.getFechaFichaje());
+
+		Document changes=new Document();
+
+		changes.put("estado", fichaje.getEstado());
+		changes.put("horaSalida", fichaje.getHoraSalida());
+		Document doc = new Document();
+		doc.put("$set", changes);
+
+		broker.updateDoc(fichajes, criteria, doc);
+
+
+	}
+	
+	
+	
 
 	public String getHoraEntrada(String nombreEmpleado, String fechaFichaje) {
 		String horaentrada="";
@@ -130,32 +162,20 @@ public class DAOFichaje {
 	}
 	
 
-	/**
-	 * 
-	 * @method Metodo de cierre de Fichajes, el metodo utiliza el criterio de nombredeEmpleado (el de la current sesion), 
-	 * y la fecha del fichaje (asumiendo que no se necesitan fichajes entre dias) y cambia el estado y la horaSalida accediendo al mongoBroker
-	 * que updatea el documento
-	 */
-	public void cerrarFichaje(Usuario usuario, Fichaje fichaje) {
-		MongoCollection<Document> fichajes = getFichajes();
-		MongoBroker broker = MongoBroker.get();
+	
 
-		Document criteria=new Document();
-
-		criteria.put("nombreEmpleado", usuario.getNombre());
-		criteria.put("fechaFichaje", fichaje.getFechaFichaje());
-
-		Document changes=new Document();
-
-		changes.put("estado", fichaje.getEstado());
-		changes.put("horaSalida", fichaje.getHoraSalida());
-		Document doc = new Document();
-		doc.put("$set", changes);
-
-		broker.updateDoc(fichajes, criteria, doc);
-
-
-	}
+	public List<Document> fichajesEmpleado(String nombreEmpleado){
+		List<Document> fichajesempleado = new ArrayList<Document>();
+		Document documento = new Document();
+		MongoCursor<Document> elementos = getFichajes().find().iterator();
+		while(elementos.hasNext()) {
+			documento = elementos.next();
+			if(documento.get("nombreEmpleado").toString().equalsIgnoreCase(nombreEmpleado))
+				fichajesempleado.add(documento);
+		}
+		
+		return fichajesempleado;
+}
 
 
 }

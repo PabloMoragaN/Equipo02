@@ -1,6 +1,9 @@
 package com.uclm.equipo02;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -15,6 +18,8 @@ import com.uclm.equipo02.modelo.Usuario;
 import com.uclm.equipo02.persistencia.DAOFichaje;
 
 
+import org.bson.Document;
+
 @Controller
 public class FichajeController {
 
@@ -23,14 +28,15 @@ public class FichajeController {
 	
 	private final String usuario_conect = "usuarioConectado";
 	private final String errorMessage = "errorMessage";
+	private final String fichajes = "fichajes";
 
 
-	@RequestMapping("fichajes")
+	/*@RequestMapping(fichajes)
 	public ModelAndView redir() {
 		ModelAndView MV= new ModelAndView();
-		MV.setViewName("fichajes");
+		MV.setViewName(fichajes);
 		return MV;
-	}
+	}*/
 
 	@RequestMapping(value = "/abrirFichaje", method = RequestMethod.POST)
 	public String abrirFichaje(HttpServletRequest request, Model model) throws Exception {
@@ -53,7 +59,7 @@ public class FichajeController {
 		}else {
 			fichajedao.abrirFichaje(fichaje);
 		}
-		return "fichajes";
+		return fichajes;
 	} 
 
 
@@ -95,9 +101,29 @@ public class FichajeController {
 		}else {
 			fichajedao.cerrarFichaje(usuario, fichaje);
 		}
-		return "fichajes";
+		return fichajes;
 
 	} 
+	
+	
+	/**
+	 * @method 
+	 */
+	
+	@RequestMapping(value = "/listarFichajesEmpleado", method = RequestMethod.POST)
+	public String listarFichajesEmpleado(HttpServletRequest request, Model model) throws Exception {		
+		Usuario usuario;
+		usuario = (Usuario) request.getSession().getAttribute(usuario_conect);
+		
+		
+		String nombreEmpleado = usuario.getNombre();
+		List<Document> listaFichajes = new ArrayList<Document>();
+		listaFichajes = usuario.getFichajesEmpleado(nombreEmpleado);
+		model.addAttribute(fichajes, listaFichajes);
+
+		return fichajes;
+} 
+	
 
 
 }
