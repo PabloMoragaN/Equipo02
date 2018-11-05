@@ -100,6 +100,7 @@ public class FichajeController {
 			model.addAttribute(errorMessage, "No puedes cerrar ningun fichaje, necesitas fichar para cerrar un fichaje");
 			
 		}else {
+			
 			fichajedao.cerrarFichaje(usuario, fichaje);
 		}
 		return fichajes;

@@ -101,7 +101,7 @@ function myFunction() {
  <button onclick="myFunction()">Mostrar Fichajes</button>
 
   <div id="listaFichajes"class="container historial-container col-md-6 col-md-offset-3">
-  <form class"historial-form" action="listarFichajeEmpleado"  method="post">
+  <form class"historial-form" action="listarFichajesEmpleado"  method="post">
 		<table class="table table-bordered table-dark ">
 			<thead class="thead">
 				<tr>

@@ -76,6 +76,8 @@ public class DAOFichaje {
 		criteria.put("nombreEmpleado", usuario.getNombre());
 		criteria.put("fechaFichaje", fichaje.getFechaFichaje());
 
+		
+		
 		Document changes=new Document();
 
 		changes.put("estado", fichaje.getEstado());
@@ -100,7 +102,6 @@ public class DAOFichaje {
 			if(documento.get("nombreEmpleado").toString().equalsIgnoreCase(nombreEmpleado))
 				if(documento.get("fechaFichaje").toString().equals(fechaFichaje))
 					horaentrada=documento.getString("horaEntrada");
-			System.out.println("Hora Entrada"+horaentrada);
 
 		}
 		return horaentrada;
