@@ -100,7 +100,7 @@ function myFunction() {
   
  <button onclick="myFunction()">Mostrar Fichajes</button>
 
-  <div id="listaFichajes"class="container historial-container col-md-6 col-md-offset-3">
+  <!--  <div id="listaFichajes"class="container historial-container col-md-6 col-md-offset-3">
   <form class"historial-form" action="listarFichajesEmpleado"  method="post">
 		<table class="table table-bordered table-dark ">
 			<thead class="thead">
@@ -122,7 +122,32 @@ function myFunction() {
 			</tbody>
 		</table>
 	</form>
-  </div> 
+  </div> -->
+  
+  
+  <p>
+	 <form class"historial-form" action="listarFichajesEmpleado"  method="post">
+		<table align="center" border="1" width: 100%>
+			<thead class="thead">
+				<tr>
+					<th scope="col">Fecha</th>
+					<th scope="col">Entrada</th>
+					<th scope="col">Salida</th>
+					<th scope="col">Estado</th>
+
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach var="fich" items="${fichajes}">
+					<td>${fich.fechaFichaje}</td>
+					<td>${fich.horaFichaje}</td>
+					<td>${fich.horaCierre}</td>
+					<td>${fich.estado}</td>
+				</c:forEach>
+			</tbody>
+		</table>
+	</form>
+	</p>
   
 
 
