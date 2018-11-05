@@ -96,12 +96,13 @@ public class FichajeController {
 
 		Fichaje fichaje = new Fichaje(usuario.getNombre(), fecha,horaentrada,horaactual,false);;
 		
-		if(!fichajedao.validezCerrado(fichaje)) {///FUNCIONA PERO NO SALE EL MENSAJE
+		if(fichajedao.validezCerrado(fichaje)) {///FUNCIONA PERO NO SALE EL MENSAJE
+			fichajedao.cerrarFichaje(usuario, fichaje);
 			model.addAttribute(errorMessage, "No puedes cerrar ningun fichaje, necesitas fichar para cerrar un fichaje");
 			
 		}else {
 			
-			fichajedao.cerrarFichaje(usuario, fichaje);
+			model.addAttribute(errorMessage, "No puedes cerrar ningun fichaje, necesitas fichar para cerrar un fichaje");
 		}
 		return fichajes;
 

@@ -139,17 +139,16 @@ public class DAOFichaje {
 		Document documento = new Document();
 		MongoCursor<Document> elementos = getFichajes().find().iterator();
 		while(elementos.hasNext()) {
-			documento = elementos.next();
-			if(documento.get("horaEntrada").toString().equalsIgnoreCase(fichaje.getHoraEntrada())) {
+			documento = elementos.next();		
 				if(documento.get("nombreEmpleado").toString().equalsIgnoreCase(fichaje.getNombreEmpleado()))//usuario sesion
 					if(documento.get("fechaFichaje").toString().equals(fichaje.getFechaFichaje()))
-						if(documento.get("estado").toString().equals(Boolean.toString(false)))
-							return false;
+						if(documento.get("horaEntrada").toString().equalsIgnoreCase(fichaje.getHoraEntrada()))
+						if(documento.get("estado").toString().equals(Boolean.toString(true))) 
+							return true;
 
-			}
 		}
 
-		return true;
+		return false;
 	}
 
 	public boolean creacionVarios(Fichaje fichaje) {
