@@ -60,7 +60,7 @@ public class DAOFichaje {
 		fichajes.insertOne(documento);//se podria cambiar a broker.insertDoc(fichajes, documento) para concordar con cerrarFichaje
 	}
 
-	
+
 	/**
 	 * 
 	 * @method Metodo de cierre de Fichajes, el metodo utiliza el criterio de nombredeEmpleado (el de la current sesion), 
@@ -76,8 +76,8 @@ public class DAOFichaje {
 		criteria.put("nombreEmpleado", usuario.getNombre());
 		criteria.put("fechaFichaje", fichaje.getFechaFichaje());
 
-		
-		
+
+
 		Document changes=new Document();
 
 		changes.put("estado", fichaje.getEstado());
@@ -89,9 +89,9 @@ public class DAOFichaje {
 
 
 	}
-	
-	
-	
+
+
+
 
 	public String getHoraEntrada(String nombreEmpleado, String fechaFichaje) {
 		String horaentrada="";
@@ -108,7 +108,7 @@ public class DAOFichaje {
 
 	}
 
-	
+
 	/**
 	 * 
 	 * @method Comprueba que si hay un fichaje abierto, no puedas abrir otro fichaje antes de cerrar el anterior
@@ -127,27 +127,30 @@ public class DAOFichaje {
 		}
 		return true;
 	}
-	
-	
+
+
 	/**
 	 * 
 	 * @method Comprueba si no hay algun fichaje abierto que se puede cerrar. Si no hay ninguno abierto, tienes que crear uno nuevo.
 	 */
-	
+
 	public boolean validezCerrado(Fichaje fichaje) {
 		Document documento = new Document();
 		MongoCursor<Document> elementos = getFichajes().find().iterator();
 		while(elementos.hasNext()) {
 			documento = elementos.next();
-			if(documento.get("nombreEmpleado").toString().equalsIgnoreCase(fichaje.getNombreEmpleado()))//usuario sesion
-				if(documento.get("fechaFichaje").toString().equals(fichaje.getFechaFichaje()))
-					if(documento.get("estado").toString().equals(Boolean.toString(false)))
-						return false;
+			while(documento.get("horaEntrada").toString().equalsIgnoreCase(fichaje.getHoraEntrada())) {
+				if(documento.get("nombreEmpleado").toString().equalsIgnoreCase(fichaje.getNombreEmpleado()))//usuario sesion
+					if(documento.get("fechaFichaje").toString().equals(fichaje.getFechaFichaje()))
+						if(documento.get("estado").toString().equals(Boolean.toString(false)))
+							return false;
 
+			}
 		}
+
 		return true;
 	}
-	
+
 	public boolean creacionVarios(Fichaje fichaje) {
 		Document documento = new Document();
 		MongoCursor<Document> elementos = getFichajes().find().iterator();
@@ -161,9 +164,9 @@ public class DAOFichaje {
 		}
 		return false;
 	}
-	
 
-	
+
+
 
 	public List<Document> fichajesEmpleado(String nombreEmpleado){
 		List<Document> fichajesempleado = new ArrayList<Document>();
@@ -174,9 +177,9 @@ public class DAOFichaje {
 			if(documento.get("nombreEmpleado").toString().equalsIgnoreCase(nombreEmpleado))
 				fichajesempleado.add(documento);
 		}
-		
+
 		return fichajesempleado;
-}
+	}
 
 
 }
