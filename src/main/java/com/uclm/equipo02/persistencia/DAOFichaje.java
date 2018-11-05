@@ -49,7 +49,8 @@ public class DAOFichaje {
 
 	public void abrirFichaje(Fichaje fichaje) {
 		Document documento = new Document();
-
+		
+		documento.append("id",fichaje.getidFichaje());
 		documento.append("nombreEmpleado", fichaje.getNombreEmpleado());
 		documento.append("fechaFichaje", fichaje.getFechaFichaje());
 		documento.append("horaEntrada", fichaje.getHoraEntrada());
@@ -72,7 +73,8 @@ public class DAOFichaje {
 		MongoBroker broker = MongoBroker.get();
 
 		Document criteria=new Document();
-
+		
+		criteria.put("id", fichaje.getidFichaje());
 		criteria.put("nombreEmpleado", usuario.getNombre());
 		criteria.put("fechaFichaje", fichaje.getFechaFichaje());
 
@@ -99,6 +101,7 @@ public class DAOFichaje {
 		MongoCursor<Document> elementos = getFichajes().find().iterator();
 		while(elementos.hasNext()) {
 			documento = elementos.next();
+			
 			if(documento.get("nombreEmpleado").toString().equalsIgnoreCase(nombreEmpleado))
 				if(documento.get("fechaFichaje").toString().equals(fechaFichaje))
 					horaentrada=documento.getString("horaEntrada");
@@ -154,7 +157,7 @@ public class DAOFichaje {
 			documento = elementos.next();		
 				if(documento.get("nombreEmpleado").toString().equalsIgnoreCase(fichaje.getNombreEmpleado()))//usuario sesion
 					if(documento.get("fechaFichaje").toString().equals(fichaje.getFechaFichaje()))
-						if(documento.get("horaEntrada").toString().equalsIgnoreCase(fichaje.getHoraEntrada()))
+						//if(documento.get("horaEntrada").toString().equalsIgnoreCase(fichaje.getHoraEntrada()))
 						if(documento.get("estado").toString().equals(Boolean.toString(true))) 
 							return true;
 
