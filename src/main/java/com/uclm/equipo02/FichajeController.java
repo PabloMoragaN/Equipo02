@@ -98,7 +98,7 @@ public class FichajeController {
 		
 		if(fichajedao.validezCerrado(fichaje)) {///FUNCIONA PERO NO SALE EL MENSAJE
 			fichajedao.cerrarFichaje(usuario, fichaje);
-			model.addAttribute(errorMessage, "No puedes cerrar ningun fichaje, necesitas fichar para cerrar un fichaje");
+	
 			
 		}else {
 			
