@@ -108,7 +108,7 @@ public class FichajeController {
 	 */
 	
 	@RequestMapping(value = "listarFichajesEmpleado", method = RequestMethod.POST) 
-	public ModelAndView listarFichajesEmpleado(HttpServletRequest request,ModelAndView model) throws Exception {		
+	public ModelAndView listarFichajesEmpleado(HttpServletRequest request,ModelMap model) throws Exception {		
 		Usuario usuario;
 		
 		usuario = (Usuario) request.getSession().getAttribute(usuario_conect); 
@@ -119,9 +119,10 @@ public class FichajeController {
 		
 		listaFichajes = usuario.getFichajesEmpleado(nombreEmpleado);
 		
-		model.addObject("fichajesEmpleado", listaFichajes);
-
-		return model;
+		
+		model.addAttribute("fichajesEmpleado", listaFichajes);
+		
+		return new ModelAndView("listarFichajesEmpleado","fichajesEmpleado",listaFichajes);
 		} 
 
 	
