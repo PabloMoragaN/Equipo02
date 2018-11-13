@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -114,17 +115,17 @@ public class FichajeController {
 	 */
 	
 	@RequestMapping(value = "/listarFichajesEmpleado", method = RequestMethod.POST)
-	public ModelAndView listarFichajesEmpleado(HttpServletRequest request, HttpServletRequest response, ModelMap model) throws Exception {		
+	public String listarFichajesEmpleado(HttpServletRequest request,Model model, @ModelAttribute("listafichajes")List<Document> listaFichajes) throws Exception {		
 		Usuario usuario;
 		usuario = (Usuario) request.getSession().getAttribute(usuario_conect);
 		
 		
 		String nombreEmpleado = usuario.getNombre();
-		List<Document> listaFichajes = new ArrayList<Document>();
+		
 		listaFichajes = usuario.getFichajesEmpleado(nombreEmpleado);
 		model.addAttribute(fichajes, listaFichajes);
 
-		return new ModelAndView("listarFichajesEmpleado",fichajes,listaFichajes);
+		return fichajes;
 } 
 	
 

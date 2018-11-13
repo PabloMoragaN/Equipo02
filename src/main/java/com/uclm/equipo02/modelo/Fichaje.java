@@ -3,22 +3,22 @@ package com.uclm.equipo02.modelo;
 import com.uclm.equipo02.persistencia.DAOFichaje;
 public class Fichaje {
 
-	private String fechaFichaje, horaFichaje, horaSalida, nombreEmpleado;
+	private String fechaFichaje, horaEntrada, horaSalida, nombreEmpleado;
 
 	private boolean estado; //true=abierto false=cerrado
 
 	DAOFichaje daofichaje=new DAOFichaje();
 
 
-	////Fichaj con una sola hora de fichaje  y el metodo cerraFIchaje --> horaFichaje=horaSalida
+	////Fichaj con una sola hora de fichaje  y el metodo cerraFIchaje --> horaEntrada=horaSalida
 	///AnADIR HORA SALIDA Y ACTUALIZAR 
 	//Document updateQuery=new Document("usuario.getNombre()","usuario.getNombre()");
 	//fichajes.updateOne(updateQuery,new Document("set",new Document("usuario.getNombre")))
 
-	public Fichaje(String nombreEmpleado, String fechaFichaje, String horaFichaje,String horaSalida,boolean estado ) {
+	public Fichaje(String nombreEmpleado, String fechaFichaje, String horaEntrada,String horaSalida,boolean estado ) {
 		this.nombreEmpleado=nombreEmpleado;
 		this.fechaFichaje = fechaFichaje;
-		this.horaFichaje = horaFichaje;
+		this.horaEntrada = horaEntrada;
 		this.horaSalida=horaSalida;
 		this.estado = estado;	//Tru--> Fichaje Abierto False--> Fichaje Cerrado
 	}
@@ -43,15 +43,15 @@ public class Fichaje {
 		this.fechaFichaje = fechaFichaje;
 	}
 	public String getHoraEntrada() {
-		return horaFichaje;
+		return horaEntrada;
 	}
-	public void setHoraFichaje(String horaEntrada) {
-		this.horaFichaje = horaEntrada;
+	public void sethoraEntrada(String horaEntrada) {
+		this.horaEntrada = horaEntrada;
 	}
 	public String getHoraSalida() {
 		return horaSalida;
 	}
-	public void setHoraCierre(String horaSalida) {
+	public void sethoraSalida(String horaSalida) {
 		this.horaSalida = horaSalida;
 	}
 

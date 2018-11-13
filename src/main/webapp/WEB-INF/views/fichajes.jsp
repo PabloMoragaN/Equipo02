@@ -74,7 +74,7 @@
 
 
 <body>
-
+<!-- 
 <script>
 function myFunction() {
     var x = document.getElementById("listaFichajes");
@@ -85,6 +85,7 @@ function myFunction() {
     }
 }
 </script>
+-->
 
 	<h1 align="center">EQUIPO 02</h1>
 	</br>
@@ -96,11 +97,43 @@ function myFunction() {
 		<input type="submit" name="cerrarFichaje" value="Cerrar Fichaje" />
 	</form>
   
-  
-  
- <button onclick="myFunction()">Mostrar Fichajes</button>
 
-  <!--  <div id="listaFichajes"class="container historial-container col-md-6 col-md-offset-3">
+	 <form action="listarFichajesEmpleado"  method="post" modelAttribute="listaFichajes">
+		<table align="center" border="1" width: 100%>
+			<thead class="thead">
+				<tr>
+					<th scope="col">Fecha</th>
+					<th scope="col">Entrada</th>
+					<th scope="col">Salida</th>
+					<th scope="col">Estado</th>
+
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach var="fich" items="${listaFichajes}">
+					<td>${fich.fechaFichaje}</td>
+					<td>${fich.horaFichaje}</td>
+					<td>${fich.horaCierre}</td>
+					<td>${fich.estado}</td>
+				</c:forEach>
+			</tbody>
+		</table>
+	</form>
+
+  
+
+
+
+
+</body>
+</html>
+</body>
+</html>
+  
+  
+<!--  <button onclick="myFunction()">Mostrar Fichajes</button>
+
+   <div id="listaFichajes"class="container historial-container col-md-6 col-md-offset-3">
   <form class"historial-form" action="listarFichajesEmpleado"  method="post">
 		<table class="table table-bordered table-dark ">
 			<thead class="thead">
@@ -125,38 +158,7 @@ function myFunction() {
   </div> -->
   
   
-  <p>
-	 <form action="listarFichajesEmpleado"  method="post">
-		<table align="center" border="1" width: 100%>
-			<thead class="thead">
-				<tr>
-					<th scope="col">Fecha</th>
-					<th scope="col">Entrada</th>
-					<th scope="col">Salida</th>
-					<th scope="col">Estado</th>
-
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach var="fich" items="${fichajes}">
-					<td>${fich.fechaFichaje}</td>
-					<td>${fich.horaFichaje}</td>
-					<td>${fich.horaCierre}</td>
-					<td>${fich.estado}</td>
-				</c:forEach>
-			</tbody>
-		</table>
-	</form>
-	</p>
-  
-
-
-
-
-</body>
-</html>
-</body>
-</html>
+ 
 
 
 <!--  
