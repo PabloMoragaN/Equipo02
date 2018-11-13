@@ -129,6 +129,7 @@ public class FichajeController {
 		} 
 **/
 	
+	@RequestMapping(value = "/listarFichajesEmpleado", method = RequestMethod.POST)
 	public String listarFichajesEmpleado(HttpServletRequest request,Model model) throws Exception {		
 		Usuario usuario;
 		usuario = (Usuario) request.getSession().getAttribute(usuario_conect);
