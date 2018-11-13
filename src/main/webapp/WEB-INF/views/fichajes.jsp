@@ -110,7 +110,7 @@ function myFunction() {
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="fich" items="${listaFichajes}">
+				<c:forEach var="fich" items="${fichajes}">
 					<td>${fich.fechaFichaje}</td>
 					<td>${fich.horaFichaje}</td>
 					<td>${fich.horaCierre}</td>
