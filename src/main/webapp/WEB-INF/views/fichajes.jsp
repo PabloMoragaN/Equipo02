@@ -98,23 +98,23 @@ function myFunction() {
 	</form>
   
 
-	 <form action="listarFichajesEmpleado"  method="post">
+	 <form action="listarFichajesEmpleado"  method="post" modelAttribute="listaFichajes">
 		<table align="center" border="1" width: 100%>
 			<thead class="thead">
 				<tr>
-					<th scope="col">Fecha</th>
-					<th scope="col">Entrada</th>
-					<th scope="col">Salida</th>
-					<th scope="col">Estado</th>
+					<th>Fecha</th>
+					<th>Entrada</th>
+					<th>Salida</th>
+					<th>Estado</th>
 
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="fich" items="${fichajes}">
-					<td>${fich.fechaFichaje}</td>
-					<td>${fich.horaFichaje}</td>
-					<td>${fich.horaCierre}</td>
-					<td>${fich.estado}</td>
+				<c:forEach var="fichaje" items="${listaFichajes}">
+					<td>${fichaje.fechaFichaje}"</td>
+					<td>${fichaje.horaFichaje}</td>
+					<td>${fichaje.horaCierre}</td>
+					<td>${fichaje.estado}</td>
 				</c:forEach>
 			</tbody>
 		</table>
