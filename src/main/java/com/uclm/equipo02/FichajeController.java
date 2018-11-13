@@ -124,7 +124,7 @@ public class FichajeController {
 		listaFichajes = usuario.getFichajesEmpleado(nombreEmpleado);
 		model.addAttribute(fichajes, listaFichajes);
 
-		return new ModelAndView(fichajes,fichajes,listaFichajes);
+		return new ModelAndView("listarFichajesEmpleado",fichajes,listaFichajes);
 } 
 	
 
