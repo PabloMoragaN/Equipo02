@@ -114,7 +114,7 @@ public class FichajeController {
 	 * @method 
 	 */
 	
-	@RequestMapping(value = "/listarFichajesEmpleado", method = RequestMethod.POST)
+	/**@RequestMapping(value = "/listarFichajesEmpleado", method = RequestMethod.POST)
 	public String listarFichajesEmpleado(HttpServletRequest request,Model model, @ModelAttribute("fichajes") List<Document> listaFichajes) throws Exception {		
 		Usuario usuario;
 		usuario = (Usuario) request.getSession().getAttribute(usuario_conect);
@@ -126,7 +126,23 @@ public class FichajeController {
 		model.addAttribute(fichajes, listaFichajes);
 
 		return fichajes;
-} 
+		} 
+**/
+	
+	public String listarFichajesEmpleado(HttpServletRequest request,Model model) throws Exception {		
+		Usuario usuario;
+		usuario = (Usuario) request.getSession().getAttribute(usuario_conect);
+		
+		List<Document> listaFichajes=new ArrayList<Document>();
+		String nombreEmpleado = usuario.getNombre();
+		
+		listaFichajes = usuario.getFichajesEmpleado(nombreEmpleado);
+		model.addAttribute(fichajes, listaFichajes);
+
+		return fichajes;
+		} 
+	
+	
 	
 
 

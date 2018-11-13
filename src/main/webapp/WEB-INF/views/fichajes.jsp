@@ -97,7 +97,7 @@ function myFunction() {
 	</form>
 
 
-	<form action="listarFichajesEmpleado" method="post" modelAttribute="listaFichajes">
+	<form action="listarFichajesEmpleado" method="post" modelAttribute="fichajes">
 		<table class="table table-dark" align="center">
 			<thead class="thead">
 				<tr>
