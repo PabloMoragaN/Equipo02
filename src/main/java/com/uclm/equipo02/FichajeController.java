@@ -122,7 +122,7 @@ public class FichajeController {
 		
 		model.addAttribute("fichajesEmpleado", listaFichajes);
 		
-		return new ModelAndView("listarFichajesEmpleado","fichajesEmpleado",listaFichajes);
+		return new ModelAndView(fichajes,"fichajesEmpleado",listaFichajes);
 		} 
 
 	
