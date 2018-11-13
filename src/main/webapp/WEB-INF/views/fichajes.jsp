@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-  pageEncoding="ISO-8859-1" import="com.uclm.equipo02.FichajeController"%>
+	pageEncoding="ISO-8859-1" import="com.uclm.equipo02.FichajeController"%>
 
 <!DOCTYPE html>
 <html>
@@ -21,7 +21,7 @@
 
 <style>
 .fichaje-container {
-  margin-top: 5%;
+	margin-top: 5%;
 	margin-bottom: 5%;
 }
 
@@ -69,12 +69,11 @@
 	color: #fff;
 	background-color: #0062cc;
 }
-
 </style>
 
 
 <body>
-<!-- 
+	<!-- 
 <script>
 function myFunction() {
     var x = document.getElementById("listaFichajes");
@@ -96,10 +95,11 @@ function myFunction() {
 	<form action="cerrarFichaje" method="post">
 		<input type="submit" name="cerrarFichaje" value="Cerrar Fichaje" />
 	</form>
-  
 
-	 <form action="listarFichajesEmpleado"  method="post" modelAttribute="listaFichajes">
-		<table align="center" border="1" width: 100%>
+
+	<form action="listarFichajesEmpleado" method="post"
+		modelAttribute="fichajes">
+		<table>
 			<thead class="thead">
 				<tr>
 					<th>Fecha</th>
@@ -110,17 +110,19 @@ function myFunction() {
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="fichaje" items="${listaFichajes}">
-					<td>${fichaje.fechaFichaje}"</td>
-					<td>${fichaje.horaFichaje}</td>
-					<td>${fichaje.horaCierre}</td>
-					<td>${fichaje.estado}</td>
+				<c:forEach items="${listaFichajes}" var="fichaje">
+					<tr>
+						<td>${fichaje.fechaFichaje}</td>
+						<td>${fichaje.horaFichaje}</td>
+						<td>${fichaje.horaCierre}</td>
+						<td>${fichaje.estado}</td>
+					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
 	</form>
 
-  
+
 
 
 
@@ -129,8 +131,8 @@ function myFunction() {
 </html>
 </body>
 </html>
-  
-  
+
+
 <!--  <button onclick="myFunction()">Mostrar Fichajes</button>
 
    <div id="listaFichajes"class="container historial-container col-md-6 col-md-offset-3">
@@ -156,9 +158,9 @@ function myFunction() {
 		</table>
 	</form>
   </div> -->
-  
-  
- 
+
+
+
 
 
 <!--  
