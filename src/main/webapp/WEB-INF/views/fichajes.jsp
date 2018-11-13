@@ -97,7 +97,7 @@ function myFunction() {
 	</form>
 
 
-	<form action="listarFichajesEmpleado" method="post" modelAttribute="fichajes">
+	<form action="listarFichajesEmpleado" method="post">
 		<table class="table table-dark" align="center">
 			<thead class="thead">
 				<tr>
@@ -109,7 +109,7 @@ function myFunction() {
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="${fichajes.listaFichajes}" var="fichaje">
+				<c:forEach items="${fichajesEmpleado}" var="fichaje">
 					<tr>
 						<td>${fichaje.fechaFichaje}</td>
 						<td>${fichaje.horaFichaje}</td>

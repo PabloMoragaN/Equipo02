@@ -40,7 +40,7 @@ public class FichajeController {
 		return MV;
 	}*/
 
-	@RequestMapping(value = "/abrirFichaje", method = RequestMethod.POST)
+	@RequestMapping(value = "abrirFichaje", method = RequestMethod.POST)
 	public String abrirFichaje(HttpServletRequest request, Model model) throws Exception {
 		String hora;
 		String fecha;
@@ -77,7 +77,7 @@ public class FichajeController {
 	fichaje hasta que se cierre el que esta abierto
 	**/
 
-	@RequestMapping(value = "/cerrarFichaje", method = RequestMethod.POST)
+	@RequestMapping(value = "cerrarFichaje", method = RequestMethod.POST)
 	public String cerrarFichaje(HttpServletRequest request, Model model) throws Exception {
 		Usuario usuario;
 		usuario = (Usuario) request.getSession().getAttribute(usuario_conect);
@@ -114,35 +114,22 @@ public class FichajeController {
 	 * @method 
 	 */
 	
-	/**@RequestMapping(value = "/listarFichajesEmpleado", method = RequestMethod.POST)
-	public String listarFichajesEmpleado(HttpServletRequest request,Model model, @ModelAttribute("fichajes") List<Document> listaFichajes) throws Exception {		
+	@RequestMapping(value = "listarFichajesEmpleado", method = RequestMethod.POST)
+	public ModelAndView listarFichajesEmpleado(HttpServletRequest request, HttpServletResponse response, ModelMap model) throws Exception {		
 		Usuario usuario;
 		usuario = (Usuario) request.getSession().getAttribute(usuario_conect);
 		
-		
+		List<Document> listaFichajes = new ArrayList<Document>();
 		String nombreEmpleado = usuario.getNombre();
 		
 		listaFichajes = usuario.getFichajesEmpleado(nombreEmpleado);
-		model.addAttribute(fichajes, listaFichajes);
+		model.addAttribute("fichajesEmpleado", listaFichajes);
 
-		return fichajes;
+		return new ModelAndView("listaFichajesEmpleado","fichajesEmpleado",listaFichajes);
 		} 
-**/
-	
-	@RequestMapping(value = "/listarFichajesEmpleado", method = RequestMethod.POST)
-	public String listarFichajesEmpleado(@ModelAttribute("listaFichajes") List<Document> listaFichajes ,HttpServletRequest request,Model model) throws Exception {		
-		Usuario usuario;
-		usuario = (Usuario) request.getSession().getAttribute(usuario_conect);
-		
-		//List<Document> listaFichajes=new ArrayList<Document>();
-		String nombreEmpleado = usuario.getNombre();
-		
-		listaFichajes = usuario.getFichajesEmpleado(nombreEmpleado);
-		model.addAttribute(fichajes, listaFichajes);
 
-		return fichajes;
-		} 
 	
+
 	
 	
 
