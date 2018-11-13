@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1" import="com.uclm.equipo02.FichajeController"%>
+  pageEncoding="ISO-8859-1" import="com.uclm.equipo02.FichajeController"%>
 
 <!DOCTYPE html>
 <html>
@@ -97,15 +97,14 @@ function myFunction() {
 	</form>
 
 
-	<form action="listarFichajesEmpleado" method="post"
-		modelAttribute="fichajes">
-		<table>
+	<form action="listarFichajesEmpleado" method="post" modelAttribute="listaFichajes">
+		<table class="table table-dark" align="center">
 			<thead class="thead">
 				<tr>
-					<th>Fecha</th>
-					<th>Entrada</th>
-					<th>Salida</th>
-					<th>Estado</th>
+					<th scope="col">Fecha</th>
+					<th scope="col">Entrada</th>
+					<th scope="col">Salida</th>
+					<th scope="col">Estado</th>
 
 				</tr>
 			</thead>
@@ -121,16 +120,6 @@ function myFunction() {
 			</tbody>
 		</table>
 	</form>
-
-
-
-
-
-
-</body>
-</html>
-</body>
-</html>
 
 
 <!--  <button onclick="myFunction()">Mostrar Fichajes</button>
