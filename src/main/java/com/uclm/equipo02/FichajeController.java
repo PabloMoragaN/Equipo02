@@ -33,13 +33,6 @@ public class FichajeController {
 	private final String fichajes = "fichajes";
 
 
-	/*@RequestMapping(fichajes)
-	public ModelAndView redir() {
-		ModelAndView MV= new ModelAndView();
-		MV.setViewName(fichajes);
-		return MV;
-	}*/
-
 	@RequestMapping(value = "abrirFichaje", method = RequestMethod.POST)
 	public String abrirFichaje(HttpServletRequest request, Model model) throws Exception {
 		String hora;
@@ -111,21 +104,24 @@ public class FichajeController {
 	
 	
 	/**
-	 * @method 
+	 * @method
 	 */
 	
-	@RequestMapping(value = "listarFichajesEmpleado", method = RequestMethod.POST)
-	public ModelAndView listarFichajesEmpleado(HttpServletRequest request, HttpServletResponse response, ModelMap model) throws Exception {		
+	@RequestMapping(value = "listarFichajesEmpleado", method = RequestMethod.POST) 
+	public ModelAndView listarFichajesEmpleado(HttpServletRequest request,ModelAndView model) throws Exception {		
 		Usuario usuario;
-		usuario = (Usuario) request.getSession().getAttribute(usuario_conect);
 		
-		List<Document> listaFichajes = new ArrayList<Document>();
+		usuario = (Usuario) request.getSession().getAttribute(usuario_conect); 
 		String nombreEmpleado = usuario.getNombre();
 		
+		
+		List<Document> listaFichajes = new ArrayList<Document>();
+		
 		listaFichajes = usuario.getFichajesEmpleado(nombreEmpleado);
-		model.addAttribute("fichajesEmpleado", listaFichajes);
+		
+		model.addObject("fichajesEmpleado", listaFichajes);
 
-		return new ModelAndView("listarFichajesEmpleado","fichajesEmpleado",listaFichajes);
+		return model;
 		} 
 
 	
