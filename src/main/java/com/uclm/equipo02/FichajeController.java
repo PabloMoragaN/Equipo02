@@ -130,11 +130,11 @@ public class FichajeController {
 **/
 	
 	@RequestMapping(value = "/listarFichajesEmpleado", method = RequestMethod.POST)
-	public String listarFichajesEmpleado(HttpServletRequest request,Model model) throws Exception {		
+	public String listarFichajesEmpleado(@ModelAttribute("listaFichajes") List<Document> listaFichajes ,HttpServletRequest request,Model model) throws Exception {		
 		Usuario usuario;
 		usuario = (Usuario) request.getSession().getAttribute(usuario_conect);
 		
-		List<Document> listaFichajes=new ArrayList<Document>();
+		//List<Document> listaFichajes=new ArrayList<Document>();
 		String nombreEmpleado = usuario.getNombre();
 		
 		listaFichajes = usuario.getFichajesEmpleado(nombreEmpleado);
