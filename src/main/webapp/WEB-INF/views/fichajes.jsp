@@ -27,6 +27,17 @@
 
 </style>
 
+<script>
+jQuery(document).ready(function(){
+    jQuery('#btnListar').on('click', function(event) {        
+         jQuery('#panelFichajes').toggle('show');
+    });
+});
+
+</script>
+
+
+
 
 <body>
 
@@ -82,8 +93,8 @@
 		<input type="submit" name="cerrarFichaje" value="Cerrar Fichaje" />
 	</form>
 
-	<form id="formListar" action="listarFichajesEmpleado" method="get" data-toggle="collapse.in"  data-target="#panelFichajes" aria-expanded="false" aria-controls="panelFichajes" >
-		<button class="btn btn-primary" type="submit">Listar Fichajes</button>
+	<form id="formListar" action="listarFichajesEmpleado" method="get">
+		<button id="btnListar" class="btn btn-primary" type="button" >Listar Fichajes</button>
 	</form>
 
 
