@@ -103,10 +103,31 @@ public class FichajeController {
 	} 
 	
 	
+	@RequestMapping(value = "listarFichajesEmpleado", method = RequestMethod.POST) 
+	public String listarFichajesEmpleado(HttpServletRequest request,Model model) throws Exception {     
+	    Usuario usuario;
+	    //Getting the identification of the employee to search through the database, name to be exact
+	    usuario = (Usuario) request.getSession().getAttribute(usuario_conect); 
+	    String nombreEmpleado = usuario.getNombre();
+
+	    //creating the list of corresponding data related to the specific employee
+	    List<Document> listaFichajes = new ArrayList<Document>();
+	    //getFichajesEmpleado() will retrieve that data from the DB through the DAO class
+	    listaFichajes = usuario.getFichajesEmpleado(nombreEmpleado);
+
+	    // this is where i think i would add the data to the jsp file
+	    model.addAttribute("fichajes", listaFichajes);
+
+	    return "fichajes"; //returning the fichajes.jsp file again
+	    } 
+	
+	
+	
+	
 	/**
 	 * @method
 	 */
-	
+	/**
 	@RequestMapping(value = "listarFichajesEmpleado", method = RequestMethod.POST) 
 	public ModelAndView listarFichajesEmpleado(HttpServletRequest request,ModelMap model) throws Exception {		
 		Usuario usuario;
@@ -125,7 +146,7 @@ public class FichajeController {
 		return new ModelAndView(fichajes,"fichajesEmpleado",listaFichajes);
 		} 
 
-	
+	**/
 
 	
 	
