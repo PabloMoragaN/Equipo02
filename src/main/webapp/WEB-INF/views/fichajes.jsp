@@ -24,7 +24,7 @@
 <style>
 
 
-.collapse.show {
+.collapse {
   visibility: visible;
 }
 </style>
@@ -85,7 +85,7 @@
 	</form>
 
 	<form id="formListar" action="listarFichajesEmpleado" method="get"  >
-		<button type="submit"  value="Submit" data-toggle="collapse"  data-target="#panelFichajes">
+		<button type="button" data-toggle="collapse"  data-target="#panelFichajes">
 		Listar Fichajes
 		</button>
 	</form>
