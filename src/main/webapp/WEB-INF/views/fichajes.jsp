@@ -14,6 +14,7 @@
 </script>
 <link rel="stylesheet" href="css/estilos.css">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
 <link
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"
 	rel="stylesheet" media="screen">
@@ -83,8 +84,9 @@
 		<input type="submit" name="cerrarFichaje" value="Cerrar Fichaje" />
 	</form>
 
-	<form id="formListar" action="listarFichajesEmpleado" method="get" data-toggle="collapse"  data-target="#panelFichajes" aria-expanded="false" aria-controls="panelFichajes" >
-		<button type="submit" form="formListar" value="Submit">Listar Fichajes</button>
+	<form id="formListar" action="listarFichajesEmpleado" method="get"  >
+		<button type="submit" form="formListar" value="Submit" 
+		data-toggle="collapse"  data-target="#panelFichajes">Listar Fichajes</button>
 	</form>
 
 
