@@ -148,6 +148,23 @@ function myFunction() {
 	</form>
 
 
+
+<!--  
+<div id="panelTodasPublicaciones" style="width:100%;height:80%"> 	    
+		<c:forEach var="listValue" items="${listafichajes}">
+			<div id="panel-${listValue.getNombreEmpleado()}${listValue.getMensaje()}" class="mensaje" style="margin-top:10px;height:100px; width:100%" >
+				<div id="Fecha Fichaje-${listValue.getUsername()}" style="text-align: center" class="col-md-2 col-lg-2 col-xs-2">${listValue.getUsername()}</div>
+				<div id="mensaje-${listValue.getMensaje()}" style="text-align: center" class="col-md-9 col-lg-9 col-xs-9">${listValue.getMensaje()}</div>
+				<div id="usuario-${listValue.getUsername()}" style="text-align: center" class="col-md-2 col-lg-2 col-xs-2">${listValue.getUsername()}</div>
+				<div id="mensaje-${listValue.getMensaje()}" style="text-align: center" class="col-md-9 col-lg-9 col-xs-9">${listValue.getMensaje()}</div>
+			</div>
+		</c:forEach>
+	</div>
+
+
+-->
+
+
 	<div id="panelHistorialFichajes">
 		<table class="table table-dark" align="center">
 			<thead class="thead">
@@ -162,10 +179,10 @@ function myFunction() {
 			<tbody>
 				<c:forEach items="${listafichajes}" var="fichaje">
 					<tr>
-						<td>${fichaje.getfechaFichaje()}</td>
-						<td>${fichaje.gethoraFichaje()}</td>
-						<td>${fichaje.gethoraSalida()}</td>
-						<td>${fichaje.getEstado()}</td>
+						<td>${fichaje.fechaFichaje}</td>
+						<td>${fichaje.horaFichaje}</td>
+						<td>${fichaje.horaSalida}</td>
+						<td>${fichaje.estado}</td>
 					</tr>
 				</c:forEach>
 			</tbody>
