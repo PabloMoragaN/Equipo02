@@ -21,6 +21,11 @@
 </head>
 
 <style>
+
+
+.collapse.show {
+  visibility: visible;
+}
 </style>
 
 
