@@ -101,7 +101,7 @@ jQuery(document).ready(function(){
 
 
 
-		<table class="table table-bordered collapse.in" id="panelFichajes" align="center">
+		<table class="table table-bordered" id="panelFichajes" align="center">
 			<thead class="thead">
 				<tr>
 					<th scope="col">Fecha</th>
