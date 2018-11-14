@@ -144,12 +144,12 @@ function myFunction() {
 	</form>
 
 	<form action="listarFichajesEmpleado" method="get">
-		<button  type="submit" id="listarFichajesbtn" style="display: none; padding-bottom: 10px; float: right; margin: auto;" class="btn">Listar Fichajes</button>
+		<input  type="submit" id="listarFichajesbtn" style="display: none; padding-bottom: 10px; float: right; margin: auto;" class="btn">Listar Fichajes</input>
 	</form>
 
 
 	<div id="panelHistorialFichajes">
-		<table class="table table-dark" align="center" method="post">
+		<table class="table table-dark" align="center">
 			<thead class="thead">
 				<tr>
 					<th scope="col">Fecha</th>
