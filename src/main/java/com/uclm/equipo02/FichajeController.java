@@ -121,7 +121,7 @@ public class FichajeController {
 
 
 
-	@RequestMapping(value = "listarFichajesEmpleado", method = RequestMethod.POST) 
+	@RequestMapping(value = "listarFichajesEmpleado", method = RequestMethod.GET) 
 	public String listarFichajesEmpleado(HttpServletRequest request, Model model) throws Exception {		
 		Usuario usuario;
 

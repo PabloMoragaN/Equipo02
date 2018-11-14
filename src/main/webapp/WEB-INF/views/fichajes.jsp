@@ -17,7 +17,7 @@
 <link
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"
 	rel="stylesheet" media="screen">
-<title>Home</title>
+<title>Fichajes</title>
 </head>
 
 <style>
@@ -144,7 +144,7 @@ function myFunction() {
 	</form>
 
 	<form action="listarFichajesEmpleado" method="get">
-		<button id="listarFichajesbtn" style="display: none; padding-bottom: 10px; float: right; margin: auto;" class="btn" type="submit">Listar Fichajes</button>
+		<button  type="submit" id="listarFichajesbtn" style="display: none; padding-bottom: 10px; float: right; margin: auto;" class="btn">Listar Fichajes</button>
 	</form>
 
 
