@@ -102,23 +102,6 @@ public class FichajeController {
 
 	} 
 
-/**
-	@RequestMapping(value = "listarFichajesEmpleado", method = RequestMethod.POST) 
-	public String listarFichajesEmpleado(HttpServletRequest request,Model model) throws Exception {     
-		Usuario usuario;
-		usuario = (Usuario) request.getSession().getAttribute(usuario_conect); 
-		String nombreEmpleado = usuario.getNombre();
-
-		List<Document> listaFichajes = new ArrayList<Document>();
-
-		listaFichajes = usuario.getFichajesEmpleado(nombreEmpleado);
-
-		model.addAttribute("fichajes", listaFichajes);
-
-		return "fichajes"; 
-	} 
-**/
-
 
 
 	@RequestMapping(value = "listarFichajesEmpleado", method = RequestMethod.GET) 

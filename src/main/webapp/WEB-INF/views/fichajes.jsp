@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-  pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
@@ -21,55 +21,6 @@
 </head>
 
 <style>
-.fichaje-container {
-	margin-top: 5%;
-	margin-bottom: 5%;
-}
-
-.historial-container {
-	margin-top: 10%;
-}
-
-.gestion-form {
-	padding: 5%;
-	box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0
-		rgba(0, 0, 0, 0.19);
-}
-
-.gestion-form h3 {
-	text-align: center;
-	color: #333;
-}
-
-.historial-form {
-	padding: 5%;
-	background: #0062cc;
-	box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0
-		rgba(0, 0, 0, 0.19);
-}
-
-.historial-form h3 {
-	text-align: center;
-	color: #fff;
-}
-
-.historial-form h4 {
-	color: #fff;
-}
-
-.btnfichaje {
-	width: 50%;
-	border-radius: 2rem;
-	padding: 0%;
-	border: solid;
-	cursor: pointer;
-}
-
-.gestion-form .btnfichaje {
-	font-weight: 600;
-	color: #fff;
-	background-color: #0062cc;
-}
 </style>
 
 
@@ -127,10 +78,9 @@
 		<input type="submit" name="cerrarFichaje" value="Cerrar Fichaje" />
 	</form>
 
-<form action="listarFichajesEmpleado" method="get">
-		<input  type="submit" data-toggle="collapse" data-target="#panelFichajes"
-    aria-expanded="false" aria-controls="panelFichaje" name="listarFichajesbtn" value="ListarFichajes">
-    </form>
+	<form action="listarFichajesEmpleado" method="get">
+		<input type="submit" data-toggle="collapse"   data-target="#panelFichajes" aria-expanded="false" aria-controls="panelFichajes" name="listarFichajesbtn" value="ListarFichajes">
+	</form>
 
 
 
