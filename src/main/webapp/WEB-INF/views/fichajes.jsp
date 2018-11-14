@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-  pageEncoding="ISO-8859-1" import="com.uclm.equipo02.FichajeController" %>
+	pageEncoding="ISO-8859-1"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <html>
@@ -86,8 +87,54 @@ function myFunction() {
 </script>
 -->
 
+
+	<nav class="navbar navbar-inverse" style="background-color: #337ab7;">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#"></a>
+			</div>
+			<div class="nav-item pull-left col-md-1 fixed-top"
+				style="position: relative; top: 8px">
+				<form action="inicio" method="GET">
+					<button class="btn" type="submit">
+						<strong><span class="glyphicon glyphicon-sort"></span>
+							Fichajes</strong>
+					</button>
+				</form>
+			</div>
+			<div class="nav-item pull-left col-md-1 fixed-top"
+				style="position: relative; top: 8px">
+				<form action="fichajes" method="GET">
+					<button class="btn" type="submit">
+						<strong><span class="glyphicon glyphicon-copy"></span>
+							Gestionar Incidencias</strong>
+					</button>
+				</form>
+			</div>
+			<div class="nav-item pull-left col-md-1 fixed-top"
+				style="position: relative; top: 8px">
+				<form action="ncidencias" method="GET">
+					<button class="btn" type="submit">
+						<strong><span class="glyphicon glyphicon-cog"></span>
+							Gestionar Contraseña</strong>
+					</button>
+				</form>
+			</div>
+			<div class="col-md-1 pull-right fixed-top"
+				style="position: relative; top: 8px">
+				<form action="logout" method="GET">
+					<button class="btn btn-danger" type="submit">
+						<strong><span class="glyphicon glyphicon-log-out"></span>Salir</strong>
+					</button>
+				</form>
+			</div>
+		</div>
+	</nav>
+
+
 	<h1 align="center">EQUIPO 02</h1>
-	</br>
+
+
 	<form action="abrirFichaje" method="post">
 		<input type="submit" name="abrirFichaje" value="Abrir Fichaje" />
 	</form>
@@ -96,9 +143,13 @@ function myFunction() {
 		<input type="submit" name="cerrarFichaje" value="Cerrar Fichaje" />
 	</form>
 
+	<form action="listarFichajesEmpleado" method="get">
+		<button id="listarFichajesbtn" style="display: none; padding-bottom: 10px; float: right; margin: auto;" class="btn" type="submit">Listar Fichajes</button>
+	</form>
 
 
-		<table action="listarFichajesEmpleado" class="table table-dark" align="center" method="post">
+	<div id="panelHistorialFichajes">
+		<table class="table table-dark" align="center" method="post">
 			<thead class="thead">
 				<tr>
 					<th scope="col">Fecha</th>
@@ -109,7 +160,7 @@ function myFunction() {
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="${fichajes}" var="fichaje">
+				<c:forEach items="${listafichajes}" var="fichaje">
 					<tr>
 						<td>${fichaje.fechaFichaje}</td>
 						<td>${fichaje.horaFichaje}</td>
@@ -119,8 +170,25 @@ function myFunction() {
 				</c:forEach>
 			</tbody>
 		</table>
-	
 
+	</div>
+
+
+<!--  
+
+	<script type="text/javascript">
+			
+
+			$('#aTodasPublicaciones').click(function() {
+				$('#listarFichajesbtn').click();
+			});
+	</script>
+
+-->
+
+
+</body>
+</html>
 
 <!--  <button onclick="myFunction()">Mostrar Fichajes</button>
 
