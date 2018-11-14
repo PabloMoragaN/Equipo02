@@ -144,7 +144,7 @@ function myFunction() {
 	</form>
 
 	<form action="listarFichajesEmpleado" method="get">
-		<input  type="submit" id="listarFichajesbtn" style="display: none; padding-bottom: 10px; float: right; margin: auto;" class="btn">Listar Fichajes</input>
+		<input  type="submit" name="listarFichajesbtn" value="ListarFichajes">
 	</form>
 
 
