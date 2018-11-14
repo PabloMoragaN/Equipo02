@@ -167,7 +167,7 @@ function myFunction() {
 				<c:forEach items="${listafichajes}" var="fichaje">
 					<tr>
 						<td>${fichaje.fechaFichaje}</td>
-						<td>${fichaje.horaFichaje}</td>
+						<td>${fichaje.horaEntrada}</td>
 						<td>${fichaje.horaSalida}</td>
 						<td>${fichaje.estado}</td>
 					</tr>
