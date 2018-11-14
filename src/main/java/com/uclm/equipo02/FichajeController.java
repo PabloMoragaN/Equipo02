@@ -136,7 +136,7 @@ public class FichajeController {
 
 		model.addAttribute("listafichajes", listaFich);
 
-		return "listarFichajesEmpleado";
+		return "fichajes";
 		} 
 	 
 
