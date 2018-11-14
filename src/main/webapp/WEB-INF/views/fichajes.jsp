@@ -32,6 +32,10 @@
 	margin-bottom:30px;
 }
 
+.btn-vertListar{
+	margin-bottom:10px;
+}
+
 .historial{
 padding: 15px;
 }
@@ -107,7 +111,7 @@ padding: 15px;
 	<div class="historial collapse.in col-md-8 col-md-offset-2" id="panelFichajes">
 	
 	<form id="formListar" action="listarFichajesEmpleado" method="get">
-				<button id="btnListar" class="btn btn-primary  " type="submit" data-toggle="collapse.in" data-target="#panelFichajes" aria-expanded="false" aria-controls="panelFichajes">ListarFichajes</button>
+				<button id="btnListar" class="btn btn-primary btn-vertListar  " type="submit" data-toggle="collapse.in" data-target="#panelFichajes" aria-expanded="false" aria-controls="panelFichajes">ListarFichajes</button>
 			</form>
 			
 		<table class="table table-bordered">
