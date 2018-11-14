@@ -78,8 +78,8 @@
 		<input type="submit" name="cerrarFichaje" value="Cerrar Fichaje" />
 	</form>
 
-	<form action="listarFichajesEmpleado" method="get">
-		<input type="submit" data-toggle="collapse"   data-target="#panelFichajes" aria-expanded="false" aria-controls="panelFichajes" name="listarFichajesbtn" value="ListarFichajes">
+	<form action="listarFichajesEmpleado" method="get" data-toggle="collapse"   data-target="#panelFichajes" aria-expanded="false" aria-controls="panelFichajes" >
+		<input type="submit" name="listarFichajesbtn" value="ListarFichajes">
 	</form>
 
 
