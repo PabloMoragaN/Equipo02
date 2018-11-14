@@ -94,15 +94,14 @@ jQuery(document).ready(function(){
 	</form>
 
 	<form id="formListar" action="listarFichajesEmpleado" method="get">
-		<button id="btnListar" class="btn btn-primary" type="button" >Listar Fichajes</button>
+		<button id="btnListar" class="btn btn-primary" type="submit" >Listar Fichajes</button>
 	</form>
 
 
 
 
 
-	<div class="collapse.in" id="panelFichajes">
-		<table class="table table-bordered" align="center">
+		<table class="table table-bordered collapse.in" id="panelFichajes" align="center">
 			<thead class="thead">
 				<tr>
 					<th scope="col">Fecha</th>
@@ -124,7 +123,6 @@ jQuery(document).ready(function(){
 			</tbody>
 		</table>
 
-	</div>
 
 </body>
 </html>
