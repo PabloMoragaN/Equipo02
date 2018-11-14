@@ -23,6 +23,11 @@
 </head>
 
 <style>
+
+
+.btn-space {
+    margin-right: 5px;
+}
 </style>
 
 <script>
@@ -39,34 +44,34 @@
 			<div class="navbar-header">
 				<a class="navbar-brand" href="#"></a>
 			</div>
-			<div class="nav-item pull-left col-md-1 fixed-top"
+			<div class="nav-item pull-left fixed-top"
 				style="position: relative; top: 8px">
 				<form action="inicio" method="GET">
-					<button class="btn" type="submit">
+					<button class="btn btn-space" type="submit">
 						<strong><span class="glyphicon glyphicon-sort"></span>
 							Fichajes</strong>
 					</button>
 				</form>
 			</div>
-			<div class="nav-item pull-left col-md-1 fixed-top"
+			<div class="nav-item pull-left  fixed-top"
 				style="position: relative; top: 8px">
 				<form action="fichajes" method="GET">
-					<button class="btn" type="submit">
+					<button class="btn btn-space " type="submit">
 						<strong><span class="glyphicon glyphicon-copy"></span>
 							Gestionar Incidencias</strong>
 					</button>
 				</form>
 			</div>
-			<div class="nav-item pull-left col-md-1 fixed-top"
+			<div class="nav-item pull-left fixed-top"
 				style="position: relative; top: 8px">
-				<form action="ncidencias" method="GET">
-					<button class="btn" type="submit">
+				<form action="Incidencias" method="GET">
+					<button class="btn btn-space" type="submit">
 						<strong><span class="glyphicon glyphicon-cog"></span>
 							Gestionar Contraseña</strong>
 					</button>
 				</form>
 			</div>
-			<div class="col-md-1 pull-right fixed-top"
+			<div class="nav-item pull-right fixed-top"
 				style="position: relative; top: 8px">
 				<form action="logout" method="GET">
 					<button class="btn btn-danger" type="submit">

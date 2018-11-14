@@ -22,7 +22,7 @@
 }
 
 .login-container h2 {
-	text-align: left;
+	
 	background-color: #337ab7;
 	color: #333;
 }
@@ -36,13 +36,13 @@
   	</div>
   </center>
 
-	<div class="container login-container col-md-6 col-md-offset-3 ">
+	<div class="container login-container col-md-4 col-md-offset-4 ">
 		<div class="row">
 			<h2>
 				<span class=" glyphicon glyphicon-pencil "></span> Login
 			</h2>
 
-			<div class="login-form center-div col-md-4">
+			<div class="login-form">
 
 
 
@@ -74,4 +74,3 @@
 
 </body>
 </html>
-
