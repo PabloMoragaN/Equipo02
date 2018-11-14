@@ -90,8 +90,8 @@ padding: 15px;
 	</nav>
 
 
-	<div class="container inline">
-		<div class="btn-group">
+	<div class="container">
+		
 			<form action="abrirFichaje" method="post">
 				<button type="submit" id="btnAbrir" class="btn btn-primary btn-verticalspace" value="Abrir Fichaje" >Abrir Fichaje</button>
 			</form>
@@ -100,15 +100,16 @@ padding: 15px;
 				<button type="submit" id="btnCerrar" class="btn btn-primary btn-verticalspace"value="Cerrar Fichaje" >Cerrar Fichaje</button>
 			</form>
 
-			<form id="formListar" action="listarFichajesEmpleado" method="get">
-				<button id="btnListar" class="btn btn-primary btn-verticalspace " type="submit" data-toggle="collapse.in" data-target="#panelFichajes" aria-expanded="false" aria-controls="panelFichajes">ListarFichajes</button>
-			</form>
-		</div>
 	</div>
 
 
 
 	<div class="historial collapse.in col-md-8 col-md-offset-2" id="panelFichajes">
+	
+	<form id="formListar" action="listarFichajesEmpleado" method="get">
+				<button id="btnListar" class="btn btn-primary  " type="submit" data-toggle="collapse.in" data-target="#panelFichajes" aria-expanded="false" aria-controls="panelFichajes">ListarFichajes</button>
+			</form>
+			
 		<table class="table table-bordered">
 			<thead class="thead">
 				<tr>
