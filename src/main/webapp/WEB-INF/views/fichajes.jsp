@@ -28,6 +28,13 @@
 .btn-space {
     margin-right: 5px;
 }
+.btn-padding{
+	padding:10px;
+}
+
+.historial{
+padding: 30px;
+}
 </style>
 
 <script>
@@ -83,25 +90,25 @@
 	</nav>
 
 
-	<div class="container">
+	<div class="container inline">
 		<div class="btn-group">
 			<form action="abrirFichaje" method="post">
-				<button type="submit" id="btnAbrir" class="btn btn-primary" value="Abrir Fichaje" >Abrir Fichaje</button>
+				<button type="submit" id="btnAbrir" class="btn btn-primary btn-padding" value="Abrir Fichaje" >Abrir Fichaje</button>
 			</form>
 
 			<form action="cerrarFichaje" method="post">
-				<button type="submit" id="btnCerrar" class="btn btn-primary"value="Cerrar Fichaje" >Cerrar Fichaje</button>
+				<button type="submit" id="btnCerrar" class="btn btn-primary btn-padding"value="Cerrar Fichaje" >Cerrar Fichaje</button>
 			</form>
 
 			<form id="formListar" action="listarFichajesEmpleado" method="get">
-				<button id="btnListar" class="btn btn-primary" type="submit" data-toggle="collapse.in" data-target="#panelFichajes" aria-expanded="false" aria-controls="panelFichajes">ListarFichajes</button>
+				<button id="btnListar" class="btn btn-primary btn-padding" type="submit" data-toggle="collapse.in" data-target="#panelFichajes" aria-expanded="false" aria-controls="panelFichajes">ListarFichajes</button>
 			</form>
 		</div>
 	</div>
 
 
 
-	<div class="collapse.in col-md-8 col-md-offset-2" id="panelFichajes">
+	<div class="historial collapse.in col-md-8 col-md-offset-2" id="panelFichajes">
 		<table class="table table-bordered">
 			<thead class="thead">
 				<tr>
