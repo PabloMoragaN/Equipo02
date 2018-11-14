@@ -85,8 +85,9 @@
 	</form>
 
 	<form id="formListar" action="listarFichajesEmpleado" method="get"  >
-		<button type="submit" form="formListar" value="Submit" 
-		data-toggle="collapse"  data-target="#panelFichajes">Listar Fichajes</button>
+		<button type="submit"  value="Submit" data-toggle="collapse"  data-target="#panelFichajes">
+		Listar Fichajes
+		</button>
 	</form>
 
 
