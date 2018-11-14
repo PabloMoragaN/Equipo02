@@ -162,10 +162,10 @@ function myFunction() {
 			<tbody>
 				<c:forEach items="${listafichajes}" var="fichaje">
 					<tr>
-						<td>${fichaje.fechaFichaje}</td>
-						<td>${fichaje.horaFichaje}</td>
-						<td>${fichaje.horaCierre}</td>
-						<td>${fichaje.estado}</td>
+						<td>${fichaje.getfechaFichaje()}</td>
+						<td>${fichaje.gethoraFichaje()}</td>
+						<td>${fichaje.gethoraSalida()}</td>
+						<td>${fichaje.getEstado()}</td>
 					</tr>
 				</c:forEach>
 			</tbody>
