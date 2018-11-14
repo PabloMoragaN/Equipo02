@@ -36,7 +36,7 @@
   	</div>
   </center>
 
-	<div class="container login-container col-md-4 col-md-offset-4  ">
+	<div class="container login-container col-md-6 col-md-offset-3 ">
 		<div class="row">
 			<h2>
 				<span class=" glyphicon glyphicon-pencil "></span> Login

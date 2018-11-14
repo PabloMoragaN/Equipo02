@@ -7,10 +7,11 @@
 <head>
 
 <meta charset="utf-8">
-<meta name="viewport" http-equiv="Content-Type" content="text/html,width=device-width, initial-scale=1, shrink-to-fit=no ">
+<meta name="viewport" http-equiv="Content-Type"
+	content="text/html,width=device-width, initial-scale=1, shrink-to-fit=no ">
 
 <link rel="stylesheet"
-  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script
@@ -22,18 +23,10 @@
 </head>
 
 <style>
-
-
-
 </style>
 
 <script>
-jQuery(document).ready(function(){
-    jQuery('#btnListar').on('click', function(event) {        
-         jQuery('#panelFichajes').toggle('show');
-    });
-});
-
+	
 </script>
 
 
@@ -85,23 +78,26 @@ jQuery(document).ready(function(){
 	</nav>
 
 
-	<form action="abrirFichaje" method="post">
-		<input type="submit" name="abrirFichaje" value="Abrir Fichaje" />
-	</form>
+	<div class="container">
+		<div class="btn-group">
+			<form action="abrirFichaje" method="post">
+				<button type="submit" id="btnAbrir" class="btn btn-primary" value="Abrir Fichaje" >Abrir Fichaje</button>
+			</form>
 
-	<form action="cerrarFichaje" method="post">
-		<input type="submit" name="cerrarFichaje" value="Cerrar Fichaje" />
-	</form>
+			<form action="cerrarFichaje" method="post">
+				<button type="submit" id="btnCerrar" class="btn btn-primary"value="Cerrar Fichaje" >Cerrar Fichaje</button>
+			</form>
 
-	<form id="formListar" action="listarFichajesEmpleado" method="get">
-		<button id="btnListar" class="btn btn-primary" type="submit" >Listar Fichajes</button>
-	</form>
+			<form id="formListar" action="listarFichajesEmpleado" method="get">
+				<button id="btnListar" class="btn btn-primary" type="submit" data-toggle="collapse.in" data-target="#panelFichajes" aria-expanded="false" aria-controls="panelFichajes">ListarFichajes</button>
+			</form>
+		</div>
+	</div>
 
 
 
-
-
-		<table class="table table-bordered" id="panelFichajes" align="center">
+	<div class="collapse.in col-md-8 col-md-offset-2" id="panelFichajes">
+		<table class="table table-bordered">
 			<thead class="thead">
 				<tr>
 					<th scope="col">Fecha</th>
@@ -123,6 +119,7 @@ jQuery(document).ready(function(){
 			</tbody>
 		</table>
 
+	</div>
 
 </body>
 </html>
