@@ -28,12 +28,12 @@
 .btn-space {
     margin-right: 5px;
 }
-.btn-padding{
-	padding:10px;
+.btn-verticalspace{
+	margin-bottom:30px;
 }
 
 .historial{
-padding: 30px;
+padding: 15px;
 }
 </style>
 
@@ -93,15 +93,15 @@ padding: 30px;
 	<div class="container inline">
 		<div class="btn-group">
 			<form action="abrirFichaje" method="post">
-				<button type="submit" id="btnAbrir" class="btn btn-primary btn-padding" value="Abrir Fichaje" >Abrir Fichaje</button>
+				<button type="submit" id="btnAbrir" class="btn btn-primary btn-verticalspace" value="Abrir Fichaje" >Abrir Fichaje</button>
 			</form>
 
 			<form action="cerrarFichaje" method="post">
-				<button type="submit" id="btnCerrar" class="btn btn-primary btn-padding"value="Cerrar Fichaje" >Cerrar Fichaje</button>
+				<button type="submit" id="btnCerrar" class="btn btn-primary btn-verticalspace"value="Cerrar Fichaje" >Cerrar Fichaje</button>
 			</form>
 
 			<form id="formListar" action="listarFichajesEmpleado" method="get">
-				<button id="btnListar" class="btn btn-primary btn-padding" type="submit" data-toggle="collapse.in" data-target="#panelFichajes" aria-expanded="false" aria-controls="panelFichajes">ListarFichajes</button>
+				<button id="btnListar" class="btn btn-primary btn-verticalspace " type="submit" data-toggle="collapse.in" data-target="#panelFichajes" aria-expanded="false" aria-controls="panelFichajes">ListarFichajes</button>
 			</form>
 		</div>
 	</div>
