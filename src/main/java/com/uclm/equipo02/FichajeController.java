@@ -27,7 +27,7 @@ public class FichajeController {
 
 	DAOFichaje fichajedao = new DAOFichaje();
 
-	
+
 	private final String usuario_conect = "usuarioConectado";
 	private final String errorMessage = "errorMessage";
 	private final String fichajes = "fichajes";
@@ -50,7 +50,7 @@ public class FichajeController {
 
 		if(!fichajedao.validezAbierto(fichaje)) {///FUNCIONA PERO NO SALE EL MENSAJE
 			model.addAttribute(errorMessage, "No puedes abrir otro fichaje, necesitas cerrar tu fichaje actual");
-			
+
 		}else {
 			fichajedao.abrirFichaje(fichaje);
 		}
@@ -65,10 +65,10 @@ public class FichajeController {
 
 	AL CREAR UN SEGUNDO FICHAJE LO CREA BIEN PERO SI VAS A CERRAR ESE SEGUNDO FICHAJE TE ACTUALZIA LA HORA DE SALIDA DEL PRIMERO,
 	TENDRIA QUE COGER EL HORA DE FICHAJE MAS ACTUAL Y ACTUALIZAR Y CERRAR ESE
-	
+
 	COMPROBAR TAMBIEN QUE SE CIERRE EL ULTIMO FICHAJE aunque eso croe que se comprueba con el hehco de no poder abrir ningun 
 	fichaje hasta que se cierre el que esta abierto
-	**/
+	 **/
 
 	@RequestMapping(value = "cerrarFichaje", method = RequestMethod.POST)
 	public String cerrarFichaje(HttpServletRequest request, Model model) throws Exception {
@@ -89,41 +89,38 @@ public class FichajeController {
 		fecha=(java.time.LocalDate.now()).toString();
 
 		Fichaje fichaje = new Fichaje(usuario.getNombre(), fecha,horaentrada,horaactual,false);;
-		
+
 		if(fichajedao.validezCerrado(fichaje)) {///FUNCIONA PERO NO SALE EL MENSAJE
 			fichajedao.cerrarFichaje(usuario, fichaje);
-	
-			
+
+
 		}else {
-			
+
 			model.addAttribute(errorMessage, "No puedes cerrar ningun fichaje, necesitas fichar para cerrar un fichaje");
 		}
 		return fichajes;
 
 	} 
-	
-	
+
+
 	@RequestMapping(value = "listarFichajesEmpleado", method = RequestMethod.POST) 
 	public String listarFichajesEmpleado(HttpServletRequest request,Model model) throws Exception {     
-	    Usuario usuario;
-	    //Getting the identification of the employee to search through the database, name to be exact
-	    usuario = (Usuario) request.getSession().getAttribute(usuario_conect); 
-	    String nombreEmpleado = usuario.getNombre();
+		Usuario usuario;
+		usuario = (Usuario) request.getSession().getAttribute(usuario_conect); 
+		String nombreEmpleado = usuario.getNombre();
 
-	    //creating the list of corresponding data related to the specific employee
-	    List<Document> listaFichajes = new ArrayList<Document>();
-	    //getFichajesEmpleado() will retrieve that data from the DB through the DAO class
-	    listaFichajes = usuario.getFichajesEmpleado(nombreEmpleado);
+		List<Document> listaFichajes = new ArrayList<Document>();
 
-	    // this is where i think i would add the data to the jsp file
-	    model.addAttribute("fichajes", listaFichajes);
+		listaFichajes = usuario.getFichajesEmpleado(nombreEmpleado);
 
-	    return "fichajes"; //returning the fichajes.jsp file again
-	    } 
-	
-	
-	
-	
+		model.addAttribute("fichajes", listaFichajes);
+
+		return "fichajes"; 
+	} 
+
+
+
+
 	/**
 	 * @method
 	 */
@@ -131,25 +128,23 @@ public class FichajeController {
 	@RequestMapping(value = "listarFichajesEmpleado", method = RequestMethod.POST) 
 	public ModelAndView listarFichajesEmpleado(HttpServletRequest request,ModelMap model) throws Exception {		
 		Usuario usuario;
-		
+
 		usuario = (Usuario) request.getSession().getAttribute(usuario_conect); 
 		String nombreEmpleado = usuario.getNombre();
-		
-		
+
+
 		List<Document> listaFichajes = new ArrayList<Document>();
-		
+
 		listaFichajes = usuario.getFichajesEmpleado(nombreEmpleado);
-		
-		
+
+
 		model.addAttribute("fichajesEmpleado", listaFichajes);
-		
+
 		return new ModelAndView(fichajes,"fichajesEmpleado",listaFichajes);
 		} 
+	 **/
 
-	**/
 
-	
-	
 
 
 }

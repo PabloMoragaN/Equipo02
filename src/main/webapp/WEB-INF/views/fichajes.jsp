@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-  pageEncoding="ISO-8859-1" import="com.uclm.equipo02.FichajeController"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+  pageEncoding="ISO-8859-1" import="com.uclm.equipo02.FichajeController"  taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
 <html>
@@ -120,7 +119,7 @@ function myFunction() {
 				</c:forEach>
 			</tbody>
 		</table>
-	</form>
+	
 
 
 <!--  <button onclick="myFunction()">Mostrar Fichajes</button>
