@@ -46,9 +46,10 @@
 
 
 
+				
 				<form action="login" method="post" id="formlogin">
 					<div class="form-group">
-						<input name="txtUsuarioNombre" type="text" class="form-control" placeholder="Usuario *" value="" />
+						<input name="txtUsuarioEmail" type="text" class="form-control" placeholder="E-mail *" value="" />
 					</div>
 					<div class="form-group">
 						<input name="txtUsuarioPassword" type="password" class="form-control" placeholder="Contrase&ntilde;a *" value="" />
