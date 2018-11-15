@@ -101,7 +101,9 @@ function switchState() {
     if(document.getElementById( "tdState" ).innerHTML = "true"){
     	
     	document.getElementById('tdState').innerHTML = "Abierto";
-    }else{
+    	
+    }else if(document.getElementById( "tdState" ).innerHTML = "false"){
+    	
     	document.getElementById('tdState').innerHTML = "Cerrado";
     }     
 }	
@@ -189,7 +191,7 @@ function switchState() {
 	<div class="historial collapse.in col-md-8 col-md-offset-2" id="panelFichajes">
 	
 	<form id="formListar" action="listarFichajesEmpleado" method="get">
-				<button id="btnListar" onclick="switchState();" class="btn btn-primary btnListar  " type="submit" data-toggle="collapse.in" data-target="#panelFichajes" aria-expanded="false" aria-controls="panelFichajes">ListarFichajes</button>
+				<button id="btnListar" onload="switchState();" class="btn btn-primary btnListar  " type="submit" data-toggle="collapse.in" data-target="#panelFichajes" aria-expanded="false" aria-controls="panelFichajes">ListarFichajes</button>
 			</form>
 			
 		<table class="table table-bordered">
