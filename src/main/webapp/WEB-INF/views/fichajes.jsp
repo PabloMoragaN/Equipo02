@@ -96,6 +96,18 @@ height:180px
 
 <script>
 	
+function switchState() {
+	
+	var tdElem = document.getElementById ( "tdState" );
+	var tdText = tdElem.innerHTML;
+    if(tdText="true"){
+    	document.getElementById('tdState').innerHTML = "Abierto";
+    }else{
+    	document.getElementById('tdState').innerHTML = "Cerrado";
+    }     
+}	
+	
+	
 </script>
 
 
@@ -197,7 +209,7 @@ height:180px
 						<td>${fichaje.fechaFichaje}</td>
 						<td>${fichaje.horaEntrada}</td>
 						<td>${fichaje.horaSalida}</td>
-						<td>${fichaje.estado}</td>
+						<td id="tdState" onload="switchState();">${fichaje.estado}</td>
 					</tr>
 				</c:forEach>
 			</tbody>
