@@ -97,9 +97,9 @@ height:180px
 <script>
 	
 function switchState() {
-	
-	var tdText = document.getElementById( "tdState" ).innerHTML;;
-    if(tdText="true"){
+
+    if(document.getElementById( "tdState" ).innerHTML = "true"){
+    	
     	document.getElementById('tdState').innerHTML = "Abierto";
     }else{
     	document.getElementById('tdState').innerHTML = "Cerrado";
