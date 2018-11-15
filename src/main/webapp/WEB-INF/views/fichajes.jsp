@@ -19,10 +19,16 @@
 
 
 
-<title>Fichajes</title>
+<title>Gestión y Validación de Fichajes</title>
 </head>
 
 <style>
+
+.btn-xl {
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 10px;
+}
 
 
 .btn-space {
@@ -32,14 +38,61 @@
 	margin-bottom:30px;
 }
 
-.btn-vertListar{
-	margin-bottom:10px;
+.centerdiv {
+  display: flex;
+  justify-content: center;
 }
 
 .historial{
 padding: 15px;
 }
+
+.inlinediv{
+float: left;
+}
+
+.h1div{
+display: flex;
+  justify-content: center;
+  margin-bottom:30px;
+
+}
+
+.btnAbrir{
+ padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 10px;
+margin-bottom:30px;
+margin-right: 10px;
+
+}
+
+.btnCerrar{
+
+ padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 10px;
+margin-bottom:30px;
+}
+
+.btnListar{
+ padding: 15px 15px;
+    font-size: 15px;
+    border-radius: 15px;
+margin-bottom:10px;	
+}
+
+.logo{
+
+width:180px;
+height:180px
+}
+
+
 </style>
+
+
+
 
 <script>
 	
@@ -92,18 +145,32 @@ padding: 15px;
 			</div>
 		</div>
 	</nav>
+	
+	<center>
+	<img src="https://i.imgur.com/bwlSMSI.png" class="logo">
+	</center>
+	<div class = "page-header h1div">
+	
+   <h1>
+      Gestión y Validación de Fichajes
+   </h1>
+   
+</div>
 
-
-	<div class="container">
+	<div class="container centerdiv">
 		
-			<form action="abrirFichaje" method="post">
-				<button type="submit" id="btnAbrir" class="btn btn-primary btn-verticalspace" value="Abrir Fichaje" >Abrir Fichaje</button>
-			</form>
-
-			<form action="cerrarFichaje" method="post">
-				<button type="submit" id="btnCerrar" class="btn btn-primary btn-verticalspace"value="Cerrar Fichaje" >Cerrar Fichaje</button>
-			</form>
-
+			<div class="inlinediv">
+				<form action="abrirFichaje" method="post">
+					<button type="submit" id="btnAbrir" class="btn btn-primary btnAbrir" value="Abrir Fichaje" >Abrir Fichaje</button>
+				</form>
+			</div>
+			
+			<div class="inlinediv ">
+				<form action="cerrarFichaje" method="post">
+					<button type="submit" id="btnCerrar" class="btn btn-primary btnCerrar"value="Cerrar Fichaje" >Cerrar Fichaje</button>
+				</form>
+			</div>
+	
 	</div>
 
 
@@ -111,7 +178,7 @@ padding: 15px;
 	<div class="historial collapse.in col-md-8 col-md-offset-2" id="panelFichajes">
 	
 	<form id="formListar" action="listarFichajesEmpleado" method="get">
-				<button id="btnListar" class="btn btn-primary btn-vertListar  " type="submit" data-toggle="collapse.in" data-target="#panelFichajes" aria-expanded="false" aria-controls="panelFichajes">ListarFichajes</button>
+				<button id="btnListar" class="btn btn-primary btnListar  " type="submit" data-toggle="collapse.in" data-target="#panelFichajes" aria-expanded="false" aria-controls="panelFichajes">ListarFichajes</button>
 			</form>
 			
 		<table class="table table-bordered">
