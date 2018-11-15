@@ -100,11 +100,11 @@ function switchState() {
 
     if(document.getElementById( 'tdState' ).innerHTML = "true"){
     	
-    	document.getElementById('tdState').innerHTML = "Abierto";
+    	return document.getElementById('tdState').innerHTML = "Abierto";
     	
     }else if(document.getElementById( 'tdState' ).innerHTML = "false"){
     	
-    	document.getElementById('tdState').innerHTML = "Cerrado";
+    	return document.getElementById('tdState').innerHTML = "Cerrado";
     }     
 }	
 	
@@ -210,7 +210,7 @@ function switchState() {
 						<td>${fichaje.fechaFichaje}</td>
 						<td>${fichaje.horaEntrada}</td>
 						<td>${fichaje.horaSalida}</td>
-						<td onload="switchState(); id="tdState">${fichaje.estado}</td>
+						<td onload="switchState();" id="tdState">${fichaje.estado}</td>
 					</tr>
 				</c:forEach>
 			</tbody>
