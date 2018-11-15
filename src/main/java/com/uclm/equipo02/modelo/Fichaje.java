@@ -3,7 +3,7 @@ package com.uclm.equipo02.modelo;
 import com.uclm.equipo02.persistencia.DAOFichaje;
 public class Fichaje {
 
-	private String fechaFichaje, horaEntrada, horaSalida, nombreEmpleado;
+	private String fechaFichaje, horaEntrada, horaSalida, emailEmpleado;
 
 	private boolean estado; //true=abierto false=cerrado
 
@@ -12,11 +12,10 @@ public class Fichaje {
 
 	////Fichaj con una sola hora de fichaje  y el metodo cerraFIchaje --> horaEntrada=horaSalida
 	///AnADIR HORA SALIDA Y ACTUALIZAR 
-	//Document updateQuery=new Document("usuario.getNombre()","usuario.getNombre()");
-	//fichajes.updateOne(updateQuery,new Document("set",new Document("usuario.getNombre")))
 
-	public Fichaje(String nombreEmpleado, String fechaFichaje, String horaEntrada,String horaSalida,boolean estado ) {
-		this.nombreEmpleado=nombreEmpleado;
+
+	public Fichaje(String emailEmpleado, String fechaFichaje, String horaEntrada,String horaSalida,boolean estado ) {
+		this.emailEmpleado=emailEmpleado;
 		this.fechaFichaje = fechaFichaje;
 		this.horaEntrada = horaEntrada;
 		this.horaSalida=horaSalida;
@@ -27,12 +26,12 @@ public class Fichaje {
 
 	
 
-	public String getNombreEmpleado() {
-		return nombreEmpleado;
+	public String getEmailFichaje() {
+		return emailEmpleado;
 	}
 
-	public void setNombreEmpleado(String nombreEmpleado) {
-		this.nombreEmpleado = nombreEmpleado;
+	public void setEmailFichaje(String emailEmpleado) {
+		this.emailEmpleado = emailEmpleado;
 	}
 
 

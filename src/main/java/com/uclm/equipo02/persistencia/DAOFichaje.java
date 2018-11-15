@@ -50,7 +50,7 @@ public class DAOFichaje {
 	public void abrirFichaje(Fichaje fichaje) {
 		Document documento = new Document();
 		
-		documento.append("nombreEmpleado", fichaje.getNombreEmpleado());
+		documento.append("emailEmpleado", fichaje.getEmailFichaje());
 		documento.append("fechaFichaje", fichaje.getFechaFichaje());
 		documento.append("horaEntrada", fichaje.getHoraEntrada());
 		documento.append("horaSalida", null);
@@ -73,7 +73,7 @@ public class DAOFichaje {
 
 		Document criteria=new Document();
 		
-		criteria.put("nombreEmpleado", usuario.getNombre());
+		criteria.put("emailEmpleado", usuario.getEmail());
 		criteria.put("fechaFichaje", fichaje.getFechaFichaje());
 
 
@@ -93,13 +93,13 @@ public class DAOFichaje {
 
 
 
-	public String getHoraEntrada(String nombreEmpleado, String fechaFichaje) {
+	public String getHoraEntrada(String emailEmpleado, String fechaFichaje) {
 		String horaentrada="";
 		Document documento = new Document();
 		MongoCursor<Document> elementos = getFichajes().find().iterator();
 		while(elementos.hasNext()) {
 			documento = elementos.next();
-			if(documento.get("nombreEmpleado").toString().equalsIgnoreCase(nombreEmpleado))
+			if(documento.get("emailEmpleado").toString().equalsIgnoreCase(emailEmpleado))
 				if(documento.get("fechaFichaje").toString().equals(fechaFichaje))
 					horaentrada=documento.getString("horaEntrada");
 
@@ -120,7 +120,7 @@ public class DAOFichaje {
 		MongoCursor<Document> elementos = getFichajes().find().iterator();
 		while(elementos.hasNext()) {
 			documento = elementos.next();
-			if(documento.get("nombreEmpleado").toString().equalsIgnoreCase(fichaje.getNombreEmpleado()))//usuario sesion
+			if(documento.get("emailEmpleado").toString().equalsIgnoreCase(fichaje.getEmailFichaje()))//usuario sesion
 				if(documento.get("fechaFichaje").toString().equals(fichaje.getFechaFichaje()))
 					if(documento.get("estado").toString().equals(Boolean.toString(true)))
 						return false;
@@ -141,9 +141,8 @@ public class DAOFichaje {
 		MongoCursor<Document> elementos = getFichajes().find().iterator();
 		while(elementos.hasNext()) {
 			documento = elementos.next();
-				if(documento.get("nombreEmpleado").toString().equalsIgnoreCase(fichaje.getNombreEmpleado()))//usuario sesion
+				if(documento.get("emailEmpleado").toString().equalsIgnoreCase(fichaje.getEmailFichaje()))//usuario sesion
 					if(documento.get("fechaFichaje").toString().equals(fichaje.getFechaFichaje()))
-						//if(documento.get("horaEntrada").toString().equalsIgnoreCase(fichaje.getHoraEntrada()))
 						if(documento.get("estado").toString().equals(Boolean.toString(true))) 
 							return true;
 
@@ -151,13 +150,13 @@ public class DAOFichaje {
 
 		return false;
 	}
-
+/**
 	public boolean creacionVarios(Fichaje fichaje) {
 		Document documento = new Document();
 		MongoCursor<Document> elementos = getFichajes().find().iterator();
 		while(elementos.hasNext()) {
 			documento = elementos.next();
-			if(documento.get("nombreEmpleado").toString().equalsIgnoreCase(fichaje.getNombreEmpleado()))
+			if(documento.get("emailEmpleado").toString().equalsIgnoreCase(fichaje.getEmailFichaje()))
 				if(documento.get("fechaFichaje").toString().equals(fichaje.getFechaFichaje()))
 					if(documento.get("estado").toString().equals(Boolean.toString(fichaje.getEstado())))
 						return true;
@@ -165,17 +164,17 @@ public class DAOFichaje {
 		}
 		return false;
 	}
+**/
 
 
 
-
-	public List<Document> fichajesEmpleado(String nombreEmpleado){
+	public List<Document> fichajesEmpleado(String emailEmpleado){
 		List<Document> fichajesempleado = new ArrayList<Document>();
 		Document documento = new Document();
 		MongoCursor<Document> elementos = getFichajes().find().iterator();
 		while(elementos.hasNext()) {
 			documento = elementos.next();
-			if(documento.get("nombreEmpleado").toString().equalsIgnoreCase(nombreEmpleado))
+			if(documento.get("emailEmpleado").toString().equalsIgnoreCase(emailEmpleado))
 				fichajesempleado.add(documento);
 		}
 

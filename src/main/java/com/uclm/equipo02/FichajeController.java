@@ -46,7 +46,7 @@ public class FichajeController {
 		fecha=(java.time.LocalDate.now()).toString();
 
 
-		Fichaje fichaje = new Fichaje(usuario.getNombre(), fecha, hora,null,true);
+		Fichaje fichaje = new Fichaje(usuario.getEmail(), fecha, hora,null,true);
 
 		if(!fichajedao.validezAbierto(fichaje)) {///FUNCIONA PERO NO SALE EL MENSAJE
 			model.addAttribute(errorMessage, "No puedes abrir otro fichaje, necesitas cerrar tu fichaje actual");
@@ -81,14 +81,14 @@ public class FichajeController {
 		de empleado y la fecha del dia actual para poder cerrar el fichaje, si los criterios de aception cambian y debemos hacer fichajes entre dias
 		se arreglaria introduciendo un ID al fichaje como criterio de busqueda en la BBD**/
 		String horaentrada;
-		horaentrada=fichajedao.getHoraEntrada(usuario.getNombre(),fecha);
+		horaentrada=fichajedao.getHoraEntrada(usuario.getEmail(),fecha);
 
 
 		String horaactual;
 		horaactual=fichajedao.getCurrentTimeUsingCalendar();
 		fecha=(java.time.LocalDate.now()).toString();
 
-		Fichaje fichaje = new Fichaje(usuario.getNombre(), fecha,horaentrada,horaactual,false);;
+		Fichaje fichaje = new Fichaje(usuario.getEmail(), fecha,horaentrada,horaactual,false);;
 
 		if(fichajedao.validezCerrado(fichaje)) {///FUNCIONA PERO NO SALE EL MENSAJE
 			fichajedao.cerrarFichaje(usuario, fichaje);
@@ -109,12 +109,12 @@ public class FichajeController {
 		Usuario usuario;
 
 		usuario = (Usuario) request.getSession().getAttribute(usuario_conect); 
-		String nombreEmpleado = usuario.getNombre();
+		String emailEmpleado = usuario.getEmail();
 
 
 		List<Document> listaFich = new ArrayList<Document>();
 
-		listaFich = usuario.getFichajesEmpleado(nombreEmpleado);
+		listaFich = usuario.getFichajesEmpleado(emailEmpleado);
 
 
 		model.addAttribute("listafichajes", listaFich);
