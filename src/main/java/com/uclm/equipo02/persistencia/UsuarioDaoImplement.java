@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.bson.Document;
 import org.bson.BsonString;
+import org.bson.BsonValue;
 
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
@@ -47,6 +48,46 @@ public class UsuarioDaoImplement{
 		return true;
 	}
 
+	public String devolverRol(Usuario usuario) {
+		MongoCollection<Document> usuarios = obtenerUsuarios();
+		Document criterio = new Document();
+		criterio.append(email, new BsonString(usuario.getEmail()));
+		FindIterable<Document> resultado=usuarios.find(criterio);
+		Document usuariobso = resultado.first();
+		if (usuario==null){
+			return null;
+		}else {
+			/*
+			BsonValue nombre=usuariobso.get(rol);
+			BsonString rolbso=nombre.asString();
+			String rolFinal=rolbso.getValue();
+			*/
+			String rolUser = usuariobso.getString(rol);
+			usuario.setRol(rolUser);
+			
+		}
+		return usuario.getRol();
+	}
+	public String devolverUser(Usuario usuario) {
+		MongoCollection<Document> usuarios = obtenerUsuarios();
+		Document criterio = new Document();
+		criterio.append(email, new BsonString(usuario.getEmail()));
+		FindIterable<Document> resultado=usuarios.find(criterio);
+		Document usuariobso = resultado.first();
+		if (usuario==null || usuariobso ==null){
+			return null;
+		}else {
+			/*
+			BsonValue nombre=usuariobso.get(name);
+			BsonString namebso=nombre.asString();
+			String nombreFinal=namebso.getValue();
+			*/
+			String nombreFinal= usuariobso.getString(name);
+			usuario.setNombre(nombreFinal);
+		}
+		return usuario.getNombre();
+	}
+
 	//Obtener todos los usuarios
 	private MongoCollection<Document> obtenerUsuarios() {
 		MongoBroker broker = MongoBroker.get();
@@ -54,7 +95,7 @@ public class UsuarioDaoImplement{
 		return usuarios;
 	}
 
-	
+
 	//Devuelve los usuarios que no son administradores
 	public List<Usuario> list() {
 		MongoCollection<Document> usuarios = obtenerUsuarios();
@@ -127,7 +168,7 @@ public class UsuarioDaoImplement{
 
 		MongoCollection<Document> usuarios = obtenerUsuarios();
 		Document criterio = new Document();
-		criterio.append(name, new BsonString(usuario.getNombre()));
+		criterio.append(email, new BsonString(usuario.getEmail()));
 		criterio.append(password, new BsonString(usuario.getPassword()));
 		FindIterable<Document> resultado=usuarios.find(criterio);
 		Document usuarioBson = resultado.first();
