@@ -191,7 +191,7 @@ function switchState() {
 	<div class="historial collapse.in col-md-8 col-md-offset-2" id="panelFichajes">
 	
 	<form id="formListar" action="listarFichajesEmpleado" method="get">
-				<button id="btnListar" onclick="switchState();" class="btn btn-primary btnListar  " type="submit" data-toggle="collapse.in" data-target="#panelFichajes" aria-expanded="false" aria-controls="panelFichajes">ListarFichajes</button>
+				<button id="btnListar"  class="btn btn-primary btnListar  " type="submit" data-toggle="collapse.in" data-target="#panelFichajes" aria-expanded="false" aria-controls="panelFichajes">ListarFichajes</button>
 			</form>
 			
 		<table class="table table-bordered">
@@ -210,7 +210,7 @@ function switchState() {
 						<td>${fichaje.fechaFichaje}</td>
 						<td>${fichaje.horaEntrada}</td>
 						<td>${fichaje.horaSalida}</td>
-						<td id="tdState">${fichaje.estado}</td>
+						<td onload="switchState(); id="tdState">${fichaje.estado}</td>
 					</tr>
 				</c:forEach>
 			</tbody>
