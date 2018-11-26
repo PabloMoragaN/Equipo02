@@ -142,7 +142,7 @@ height:180px
 				style="position: relative; top: 8px">
 				<form action="interfazCrearIncidencia" method="GET">
 					<button class="btn btn-space" type="submit">
-						<strong><span class="glyphicon glyphicon-sort"></span>
+						<strong><span class="glyphicon glyphicon-copy"></span>
 							Incidencias</strong>
 					</button>
 				</form>

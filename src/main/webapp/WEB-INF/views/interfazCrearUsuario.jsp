@@ -62,10 +62,10 @@
 			</div>
       
 			<div class="nav-item pull-left col-md-1 fixed-top" style="position: relative; top: 8px">
-				<form action="fichajesAdmin" method="GET"> <button class="btn" type="submit"><strong><span class="glyphicon glyphicon-sort"></span> Fichajes</strong></button></form>
+				<form action="REfichajesAdminNav" method="GET"> <button class="btn" type="submit"><strong><span class="glyphicon glyphicon-sort"></span> Fichajes</strong></button></form>
 			</div>
 			<div class="nav-item pull-left col-md-1 fixed-top" style="position: relative; top: 8px">
-				<form action="" method="GET"> <button class="btn" type="submit"><strong><span class="glyphicon glyphicon-copy"></span> Incidencias</strong></button></form>
+				<form action="interfazCrearIncidencia" method="GET"> <button class="btn" type="submit"><strong><span class="glyphicon glyphicon-copy"></span> Incidencias</strong></button></form>
 			</div>
 			<div class="col-md-1 pull-right fixed-top" style="position: relative; top: 8px">
 				<form action="logout" method="GET"> <button class="btn btn-danger" type="submit"><strong><span class="glyphicon glyphicon-log-out"></span>Salir</strong></button></form>
