@@ -105,7 +105,7 @@
 									name="Aceptar" value="Aceptar" />
 								
 						    	<input type="submit" class="btnUsuario input-lg"
-									name="Cancelar" value="Cancelar" formAction = "REfichajesAdminNav"/>
+									name="Cancelar" value="Cancelar"/>
 							</div>
 					
 				</form>
