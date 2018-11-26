@@ -138,6 +138,15 @@ height:180px
 					</button>
 				</form>
 			</div>
+			<div class="nav-item pull-left fixed-top"
+				style="position: relative; top: 8px">
+				<form action="interfazCrearIncidencia" method="GET">
+					<button class="btn btn-space" type="submit">
+						<strong><span class="glyphicon glyphicon-sort"></span>
+							Incidencias</strong>
+					</button>
+				</form>
+			</div>
 			<div class="nav-item pull-right fixed-top"
 				style="position: relative; top: 8px">
 				<form action="logout" method="GET">

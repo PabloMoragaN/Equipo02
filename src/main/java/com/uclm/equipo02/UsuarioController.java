@@ -81,7 +81,7 @@ public class UsuarioController {
 	}
 	@RequestMapping(value = "/incidencias", method = RequestMethod.GET)
 	public ModelAndView irIncidencias() {
-		return new ModelAndView("fichajes");
+		return new ModelAndView("interfazCrearIncidencia");
 	}
 	
 

@@ -228,6 +228,11 @@ public class AdminController {
 		
 	}
 
+	@RequestMapping(value = "/interfazCrearIncidencia", method = RequestMethod.GET)
+	public ModelAndView interfazCrearIncidencia() {
+		return new ModelAndView("interfazCrearIncidencia");
+	}
+	
 	@RequestMapping(value = "/interfazCrearUsuario", method = RequestMethod.GET)
 	public ModelAndView interfazCrearUsuario() {
 		return new ModelAndView("interfazCrearUsuario");
