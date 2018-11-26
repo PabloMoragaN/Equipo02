@@ -77,7 +77,7 @@
 	</nav>
 
 
-	<div class="container creacion-container col-md-8 col-md-offset-2">
+	<div class="container creacion-container col-md-7 offset-md-2">
 		<div class="row">
 			<h2>
 				<span class="glyphicon glyphicon-plus"></span> Crear incidencia
