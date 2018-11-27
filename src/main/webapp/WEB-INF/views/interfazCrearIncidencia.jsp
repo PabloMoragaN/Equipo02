@@ -84,8 +84,7 @@
 			</h2>
 
 			<div class="gestion-form left-div">
-				<form action="crearIncidencia" method="post" id="formCrearUsuario">
-					<h3>Nombre de usuario: ${NombreUsuario} </h3>
+				<form action="crearIncidencia" method="post" id="formCrearIncidencia">
 		
 					<div class="tipoIncidencia-form">
                             <h3>Tipo de incidencia:</h3>
