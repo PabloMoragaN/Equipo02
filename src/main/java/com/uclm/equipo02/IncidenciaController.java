@@ -25,13 +25,14 @@ public class IncidenciaController {
 	    usuario = (Usuario) request.getSession().getAttribute(usuario_conect);
 	   
 		String nombreUsuario = usuario.getNombre();
+		String dniUsuario = usuario.getDni();
 		String categoria = request.getParameter("listaTiposIncidencia");
 		String fechaCreacion =(java.time.LocalDate.now()).toString();
 		String descripcion = request.getParameter("textoIncidencia");
 		String estado = "Pendiente";
 		String comentarioGestor = "";
 		
-		Incidencia incidencia = new Incidencia(nombreUsuario, categoria, descripcion, estado, 
+		Incidencia incidencia = new Incidencia(nombreUsuario, dniUsuario, categoria, descripcion, estado, 
 				fechaCreacion, comentarioGestor);
 		
 		try {

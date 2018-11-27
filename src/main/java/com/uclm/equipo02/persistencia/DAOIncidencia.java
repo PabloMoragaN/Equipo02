@@ -52,6 +52,7 @@ public class DAOIncidencia{
 		Document documento = new Document();
 
 		documento.append("nombreUsuario", incidencia.getNombreUsuario());
+		documento.append("dniUsuario", incidencia.getDniUsuario());
 		documento.append("categoria", incidencia.getCategoria());
 		documento.append("fechaCreacion", incidencia.getFechaCreacion());
 		documento.append("descripcion", incidencia.getDescripcion());

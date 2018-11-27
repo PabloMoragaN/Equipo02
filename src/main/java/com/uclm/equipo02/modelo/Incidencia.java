@@ -4,6 +4,7 @@ import com.uclm.equipo02.persistencia.DAOIncidencia;
 
 public class Incidencia {
 	private String nombreUsuario;
+	private String dniUsuario;
 	private String categoria;
 	private String fechaCreacion;
 	private String descripcion;
@@ -11,15 +12,24 @@ public class Incidencia {
 	private String comentarioGestor;
 	private DAOIncidencia dao = new DAOIncidencia();
 
-	public Incidencia(String nombreUsuario, String categoria, String descripcion, String estado, 
+	public Incidencia(String nombreUsuario, String dniUsuario, String categoria, String descripcion, String estado, 
 			String fechaCreacion, String comentarioGestor) {
 		super();
 		this.nombreUsuario = nombreUsuario;
+		this.dniUsuario = dniUsuario;
 		this.categoria = categoria;
 		this.fechaCreacion = fechaCreacion;
 		this.descripcion = descripcion;
 		this.estado = estado;
 		this.comentarioGestor = comentarioGestor;
+	}
+
+	public String getDniUsuario() {
+		return dniUsuario;
+	}
+
+	public void setDniUsuario(String dniUsuario) {
+		this.dniUsuario = dniUsuario;
 	}
 
 	public String getComentarioGestor() {
