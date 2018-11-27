@@ -11,8 +11,6 @@ import java.util.List;
 import java.util.Locale;
 import java.util.TimeZone;
 
-import org.w3c.dom.Document;
-
 import org.bson.Document;
 
 import com.uclm.equipo02.modelo.Fichaje;
