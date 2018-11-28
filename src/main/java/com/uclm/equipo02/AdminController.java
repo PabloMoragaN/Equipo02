@@ -57,8 +57,8 @@ public class AdminController {
 		}
 
 		String destinatario =  "alguien@servidor.com"; //A quien le quieres escribir.
-		String asunto = "ContraseÃ±a por defecto";
-		String cuerpo = "Hola " + nombre + "! \nLa contraseÃ±a por defecto es la siguiente:\n" + pass
+		String asunto = "Password por defecto";
+		String cuerpo = "Hola " + nombre + "! \nLa password por defecto es la siguiente:\n" + pass
 				+"\n\nUn Saludo\nInTime Corporation";
 
 		MailSender mailSender = new MailSender();
@@ -87,16 +87,16 @@ public class AdminController {
 	@RequestMapping(value = "/eliminarUsuario", method = RequestMethod.POST)
 	public String eliminarUsuario(HttpServletRequest request, Model model) throws Exception {
 
-		String email = request.getParameter("txtUsuarioEmail");
+		String dni = request.getParameter("txtDni");
 
-		if (email.equals("")){
+		if (dni.equals("")){
 			model.addAttribute(alert, "Por favor rellene los campos");
 			return "interfazEliminarUsuario";
 		}else {
 			Usuario user = new Usuario();
-			user.setEmail(email);
+			user.setDni(dni);
 			try {
-
+				user.setEmail(userDao.devolverMail(user));
 				user.setNombre(userDao.devolverUser(user));
 				userDao.delete(user);
 			}catch(Exception e) {

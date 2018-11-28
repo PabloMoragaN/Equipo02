@@ -12,7 +12,7 @@
 <script
   src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
 <style>
@@ -79,9 +79,9 @@
 			<div class="gestion-form left-div">
 				<form action="eliminarUsuario" method="post" id="formCrearUsuario">
 					<div class="form-group">
-							<h3>Introduzca el E-mail del usuario</h3>
-							<input name="txtUsuarioEmail" type="text" class="form-control" 
-							placeholder="usuario@ejemplo.com *" value="" />	
+							<h3>Introduzca el DNl del usuario</h3>
+							<input name="txtDni" type="text" class="form-control" 
+							placeholder="00000000A *" value="" />	
 					</div>		
 					<span style="color:red"><em>${alerta}</em></span>		
 						    <div class="botones-form text-right" style="margin: auto;">
