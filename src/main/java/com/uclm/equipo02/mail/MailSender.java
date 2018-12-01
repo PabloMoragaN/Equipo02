@@ -9,13 +9,6 @@ import javax.mail.MessagingException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-/**
- * MailSender- Clase para gestionar el envio de email de la cuenta de intravita a usuarios
- *
- * @author Intravita
- * @since sprint 2
- */
-
 public class MailSender {
 
 	static UserData userData = new UserData();
