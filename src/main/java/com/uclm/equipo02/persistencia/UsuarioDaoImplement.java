@@ -157,6 +157,8 @@ public Usuario selectNombre(String nombreParam) {
 		}
 		return retorno;
 	}
+
+	
 	
 	//Devuelve los usuarios que son gestores
 		public List<Usuario> obtenerGestores() {
