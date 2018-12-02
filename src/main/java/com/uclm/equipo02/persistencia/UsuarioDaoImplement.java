@@ -172,10 +172,11 @@ public Usuario selectNombre(String nombreParam) {
 				usuario=lista.next();
 				cadenaNombre=usuario.getString("nombre");
 				Usuario user = new Usuario(cadenaNombre);
+				System.out.println(user.toString());
 				
-				if(user.getRol().equals("Gestor de incidencias")){
-						retorno.add(user);
-				}
+				//if(user.getRol().equals("Gestor de incidencias")){
+				//		retorno.add(user);
+				//}
 			}
 			return retorno;
 		}
