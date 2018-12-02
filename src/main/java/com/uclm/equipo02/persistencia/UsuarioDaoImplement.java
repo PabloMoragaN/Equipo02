@@ -164,14 +164,14 @@ public Usuario selectNombre(String nombreParam) {
 		public List<Usuario> obtenerGestores() {
 			MongoCollection<Document> usuarios = obtenerUsuarios();
 			FindIterable<Document> resultado=usuarios.find();
-			String nombre;
+			String cadenaNombre;
 			Document usuario;
 			Iterator<Document> lista=resultado.iterator();
 			List<Usuario> retorno=new ArrayList<Usuario>();
 			while(lista.hasNext()) {
 				usuario=lista.next();
-				nombre=usuario.getString(name);
-				Usuario user = new Usuario(nombre);
+				cadenaNombre=usuario.getString("nombre");
+				Usuario user = new Usuario(cadenaNombre);
 				
 				if(user.getRol().equals("Gestor de incidencias")){
 						retorno.add(user);
