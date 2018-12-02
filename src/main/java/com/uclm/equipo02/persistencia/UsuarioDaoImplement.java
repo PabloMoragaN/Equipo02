@@ -21,10 +21,6 @@ public class UsuarioDaoImplement{
 	private final String rol = "rol";
 	private final String dni = "dni";
 	
-	public UsuarioDaoImplement() {
-		super();
-	}
-
 
 	public boolean login(Usuario usuario) {
 
@@ -139,7 +135,7 @@ public Usuario selectNombre(String nombreParam) {
 	}
 
 	//Obtener todos los usuarios
-	private MongoCollection<Document> obtenerUsuarios() {
+	public MongoCollection<Document> obtenerUsuarios() {
 		MongoBroker broker = MongoBroker.get();
 		MongoCollection<Document> usuarios = broker.getCollection("Usuarios");
 		return usuarios;
@@ -161,6 +157,25 @@ public Usuario selectNombre(String nombreParam) {
 		}
 		return retorno;
 	}
+	
+	//Devuelve los usuarios que son gestores
+		public List<Usuario> obtenerGestores() {
+			MongoCollection<Document> usuarios = obtenerUsuarios();
+			FindIterable<Document> resultado=usuarios.find();
+			String nombre;
+			Document usuario;
+			Iterator<Document> lista=resultado.iterator();
+			List<Usuario> retorno=new ArrayList<Usuario>();
+			while(lista.hasNext()) {
+				usuario=lista.next();
+				nombre=usuario.getString(name);
+				Usuario user = new Usuario();
+				if(user.getRol()== "Gestor de incidencias") {
+						retorno.add(user);
+				}
+			}
+			return retorno;
+		}
 
 	//Borrar usuario
 	public void delete (Usuario usuario){
