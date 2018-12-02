@@ -170,7 +170,8 @@ public Usuario selectNombre(String nombreParam) {
 				usuario=lista.next();
 				nombre=usuario.getString(name);
 				Usuario user = new Usuario();
-				if(user.getRol()== "Gestor de incidencias") {
+				
+				if(user.getRol().equals("Gestor de incidencias")){
 						retorno.add(user);
 				}
 			}

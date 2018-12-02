@@ -64,12 +64,13 @@ public class IncidenciaController {
 				+ "    Tipo: " + categoria+"\n"
 				+ "    Fecha: " + fechaCreacion+"\n\n\n"
 				+ "                 InTime Corporation";
+		MailSender mailSender = new MailSender();
+
 		
 		List<Usuario> gestores = userDao.obtenerGestores();
 		
 		for (Usuario user : gestores) {
 			mail = user.getEmail();
-			MailSender mailSender = new MailSender();
 			mailSender.enviarConGMail(mail, asunto, cuerpo);
 		}
 		
