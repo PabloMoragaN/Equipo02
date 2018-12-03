@@ -57,7 +57,6 @@ public class IncidenciaController {
 		}
 			
 		
-		String mail;
 		String  asunto = "Nueva incidencia";
 		String cuerpo = "Tiene una nueva incidencia por resolver\n"
 				+ "	   Usuario: "+ nombreUsuario+"\n"
@@ -67,11 +66,10 @@ public class IncidenciaController {
 		MailSender mailSender = new MailSender();
 
 		
-		List<Usuario> gestores = userDao.obtenerGestores();
+		List<String> gestores = userDao.obtenerGestores();
 		
-		for (Usuario user : gestores) {
-			mail = user.getEmail();
-			mailSender.enviarConGMail(mail, asunto, cuerpo);
+		for (String email : gestores) {
+			mailSender.enviarConGMail(email, asunto, cuerpo);
 		}
 		
 		
