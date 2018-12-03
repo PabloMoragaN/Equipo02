@@ -43,7 +43,7 @@ public class IncidenciaController {
 		String categoria = request.getParameter("listaTiposIncidencia");
 		String fechaCreacion =(java.time.LocalDate.now()).toString();
 		String descripcion = request.getParameter("textoIncidencia");
-		String estado = "Pendiente";
+		String estado = "En espera";
 		String comentarioGestor = "";
 		
 		
