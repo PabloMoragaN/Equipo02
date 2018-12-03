@@ -136,7 +136,7 @@ public Usuario selectNombre(String nombreParam) {
 	}
 
 	//Obtener todos los usuarios
-	public MongoCollection<Document> obtenerUsuarios() {
+	private MongoCollection<Document> obtenerUsuarios() {
 		MongoBroker broker = MongoBroker.get();
 		MongoCollection<Document> usuarios = broker.getCollection("Usuarios");
 		return usuarios;
